@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- Week 2, Exercise 3: one possible solution -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Listings</title>
+    <!-- How the table looks goes in a style element, not in attributes on the table. CSS comes in week four. -->
+    <style>
+      /* In CSS, a comment goes between these two markers. */
+      /* Neighbouring cells share one line instead of drawing two, as in video 4. */
+      table {
+        border-collapse: collapse;
+      }
+      /* Every cell gets a thin grey border, some padding, the same width, and centred text. */
+      th, td {
+        border: 1px solid gray;
+        padding: 4px 8px;
+        width: 100px;
+        text-align: center;
+      }
+      /* The caption is the yellow title bar above the table. */
+      caption {
+        background-color: yellow;
+        font-weight: bold;
+        padding: 4px;
+      }
+      /* A rule that starts with a full stop applies to every element with that class. */
+      .sunday-movie {
+        background-color: lightgray;
+      }
+      .monday-news {
+        background-color: gray;
+      }
+      .news {
+        background-color: lightblue;
+      }
+      .talk-show {
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <table>
+        <caption>TV LISTINGS</caption>
+        <!-- The first row sets the width of the table: six columns, so every row below must fill six -->
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col">7.30pm</th>
+            <th scope="col">8.00pm</th>
+            <th scope="col">8.30pm</th>
+            <th scope="col">9.00pm</th>
+            <th scope="col">9.30pm</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Monday: 1 + 3 + 2 = 6 columns -->
+          <tr>
+            <th scope="row">Monday</th>
+            <td colspan="3" class="sunday-movie">The Sunday Movie</td>
+            <td colspan="2" class="monday-news">News</td>
+          </tr>
+          <!-- Tuesday: 1 + 1 + 2 + 1 + 1 = 6 columns. News runs down to Thursday, so it has rowspan="3" -->
+          <tr>
+            <th scope="row">Tuesday</th>
+            <td>TV Show</td>
+            <td colspan="2">The Monday Movie</td>
+            <td rowspan="3" class="news">News</td>
+            <td class="talk-show">Talk Show</td>
+          </tr>
+          <!-- Wednesday: Cops covers two columns and two rows. With News from above: 1 + 1 + 2 + 1 + 1 = 6 -->
+          <tr>
+            <th scope="row">Wednesday</th>
+            <td>TV Show</td>
+            <td colspan="2" rowspan="2">Cops</td>
+            <td>Current Affairs</td>
+          </tr>
+          <!-- Thursday: only three cells of its own, because Cops and News from above fill the other three columns -->
+          <tr>
+            <th scope="row">Thursday</th>
+            <td>TV Show</td>
+            <td class="talk-show">Talk Show</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
