@@ -1,0 +1,16 @@
+Week 3, exercise 3: the seven mistakes in carrow-lake-broken, and the fixes
+
+index.html
+1. The Prices link says href="prices.html". The prices page is in the pages folder, so the path is pages/prices.html.
+2. The picture of the hills says src="images/ridge.jpeg". The file is ridge.jpg, without the e.
+3. The footer line shows "Bookings: Carrow Lake Boathouse" and then nothing. The address was typed in angle brackets, <boats@example.com>, so the browser took it for a tag and hid it. The brackets must be written as &lt; and &gt;. The validator reports four errors for this line: this is the mistake it catches best.
+
+hire.html
+4. The Home link says href="index.htm". The file is index.html: the link leaves off the l.
+5. The picture of the lake says src="C:\Users\Student\Pictures\lake.jpg". A path copied from File Explorer points at one folder on one computer. It should be images/lake.jpg, and the picture must be saved in the site's images folder. The validator reports the backslash as an error.
+
+pages/prices.html
+6. The picture of the compass says src="images/compass.jpg". From inside the pages folder the path has to climb out first: ../images/compass.jpg.
+7. The logo says src="../images/Logo.svg", with a capital L. On Windows it still shows, because Windows ignores capital letters in file names, but on most web servers it would break. It should be ../images/logo.svg. This is the mistake that only shows after the site is uploaded.
+
+The validator reports only mistakes 3 and 5. Mistakes 1, 2, 4, 6 and 7 are valid HTML: the validator never opens the folders, so it cannot tell whether a file is there.

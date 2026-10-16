@@ -13,6 +13,12 @@ or warnings.
 
 To get the files, click the green **Code** button and choose **Download ZIP**.
 
+## Pictures
+
+The pictures the exercises use are included, in the `images` folder of each
+solution that needs them. They were drawn for the course. The starter files,
+which have the same pictures, are on the Moodle course.
+
 ## Week 2
 
 | Exercise | File |
@@ -23,6 +29,10 @@ To get the files, click the green **Code** button and choose **Download ZIP**.
 
 ## Week 3
 
-The Week 3 solutions will be made available on Thursday 15 October 2026.
+| Exercise | Folder |
+|---|---|
+| 1. A website for a walking club | [`week-03/exercise-1-walking-club-site`](week-03/exercise-1-walking-club-site) |
+| 2. A booking form | [`week-03/exercise-2-book-a-walk-form`](week-03/exercise-2-book-a-walk-form) |
+| 3. Find and fix the broken pictures and links | [`week-03/exercise-3-carrow-lake-fixed`](week-03/exercise-3-carrow-lake-fixed), and the seven mistakes in [`week-03/exercise-3-the-seven-mistakes.txt`](week-03/exercise-3-the-seven-mistakes.txt) |
 
 New weeks are added as they are covered.

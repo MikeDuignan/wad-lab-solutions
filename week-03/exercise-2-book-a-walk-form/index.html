@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Walk</title>
+  </head>
+  <body>
+    <header>
+      <h1>Book a walk</h1>
+    </header>
+    <main>
+      <p>Tell us which walk you would like to join, and we will save you a place.</p>
+      <form action="index.html" method="post">
+        <p>
+          <label for="full-name">Full name</label>
+          <input type="text" id="full-name" name="full-name" required>
+        </p>
+        <p>
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" required>
+        </p>
+        <p>
+          <label for="member-number">Membership number, if you have one</label>
+          <input type="text" id="member-number" name="member-number" pattern="[0-9]{5}" title="Five digits">
+        </p>
+        <p>
+          <label for="group-size">How many are in your group?</label>
+          <input type="number" id="group-size" name="group-size" min="1" max="8" required>
+        </p>
+        <p>
+          <label for="walk-date">Which Saturday would you like?</label>
+          <input type="date" id="walk-date" name="walk-date" min="2026-10-17" max="2026-12-19" required>
+        </p>
+        <fieldset>
+          <legend>Which walk would you like to join?</legend>
+          <input type="radio" id="ridge" name="walk" value="ridge" required>
+          <label for="ridge">Ridge walk</label>
+          <input type="radio" id="lake" name="walk" value="lake">
+          <label for="lake">Lake walk</label>
+          <input type="radio" id="valley" name="walk" value="valley">
+          <label for="valley">Valley walk</label>
+        </fieldset>
+        <fieldset>
+          <legend>What will you bring?</legend>
+          <input type="checkbox" id="poles" name="bring" value="poles">
+          <label for="poles">Walking poles</label>
+          <input type="checkbox" id="waterproofs" name="bring" value="waterproofs">
+          <label for="waterproofs">Waterproofs</label>
+          <input type="checkbox" id="flask" name="bring" value="flask">
+          <label for="flask">A flask</label>
+          <input type="checkbox" id="camera" name="bring" value="camera">
+          <label for="camera">A camera</label>
+        </fieldset>
+        <p>
+          <label for="meeting-point">Where will you meet us?</label>
+          <select id="meeting-point" name="meeting-point" required>
+            <option value="">Choose a meeting point</option>
+            <option value="car-park">The lake car park</option>
+            <option value="station">The railway station</option>
+            <option value="village-hall">The village hall</option>
+          </select>
+        </p>
+        <p>
+          <label for="fitness">How fit do you feel, from 1 to 10?</label>
+          <input type="range" id="fitness" name="fitness" min="1" max="10" value="5">
+        </p>
+        <p>
+          <label for="notes">Anything we should know?</label>
+        </p>
+        <p>
+          <textarea id="notes" name="notes" rows="4" cols="50" placeholder="For example, a knee that does not like hills."></textarea>
+        </p>
+        <p>
+          <button type="submit">Book the walk</button>
+          <button type="reset">Start again</button>
+        </p>
+      </form>
+    </main>
+    <footer>
+      <p>Hillside Walking Club</p>
+    </footer>
+  </body>
+</html>
