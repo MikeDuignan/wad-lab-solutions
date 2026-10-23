@@ -1,0 +1,50 @@
+Week 4, exercise 2: Rowan Street Market. The predictions, and the five fixes
+
+PART 1: THE PREDICTIONS (the page as it is given)
+
+For each one, the rules that match the element, and the one that wins.
+
+1. The paragraph "The market opens at nine..." is DIMGRAY.
+   Matching rules: p (black), main p (dimgray), and body's navy, which is only inherited.
+   main p names two elements and p names one, so main p is more specific and wins. The inherited navy loses to any rule written for the paragraph itself.
+
+2. The paragraph "Please bring your own bags." is CRIMSON.
+   Matching rules: p, main p and .note. A class is more specific than any number of element names, so .note beats main p.
+
+3. The paragraph "Tip: come before ten..." is SEAGREEN (and italic).
+   It has two classes, note and tip. .note and .tip are exactly as specific as each other, so the one written later in the style sheet wins, and .tip comes after .note. The order of the words in the class attribute makes no difference.
+
+4. The paragraph "Today only: a free loaf..." is DARKORANGE.
+   Matching rules: p, main p, .note and #deal. An id is more specific than a class, so #deal wins.
+
+5. The list item "Cheese and butter" is PURPLE, not firebrick.
+   Matching rules: .stalls li (purple) and .sale (firebrick). .stalls li is a class plus an element name, which is more specific than the class alone, so it wins even though .sale looks like the more direct rule. This is the surprising one.
+
+6. The list item "Apples and pears" is TEAL.
+   The style attribute on the element itself is more specific than every rule in the style sheet.
+
+7. The footer sentence "Run by volunteers..." is BLACK and ITALIC.
+   Black: the p rule is written for the paragraph itself, so it beats the dimgray the paragraph would inherit from the footer. Italic: font-style is inherited from the footer, and no rule for the paragraph sets it, so the italic arrives.
+
+8. The link "home page" in the footer is BLUE (and italic).
+   The browser gives links a colour of their own, so the colour is not inherited from the paragraph. The italic is inherited, as in 7.
+
+PART 3: THE FIVE FIXES (the solution folder holds the fixed files)
+
+1. Cheese and butter should be firebrick. It lost to .stalls li. Fix: make the rule more specific than .stalls li by naming the list too:
+     .stalls .sale { color: firebrick; }
+   (two classes beat one class and an element). The old .sale rule can stay or go; in the solution it stays, so that the pattern from video 4 is clear. Writing it as .stalls li.sale also works.
+
+2. "Today only" should be crimson like the other notes, and bold. It was orange because #deal (an id) beat .note. Fix: take the colour out of the #deal rule and put in the bold:
+     #deal { font-weight: bold; }
+   Then .note decides the colour. Ids are hard to beat, which is why video 2 says to keep them for other jobs.
+
+3. Apples and pears should be firebrick like the other sale items. The style attribute in index.html beat everything. Fix: delete style="color: teal" from the element. With fix 1 in place, .stalls .sale then makes it firebrick. Adding more rules to the style sheet would never have worked, because nothing in a style sheet beats a style attribute.
+
+4. The footer text and link should be dimgray. The footer's own dimgray was only inherited, so p (black) beat it for the sentence, and the browser's link colour beat it for the link. Fix: a rule for each:
+     footer p, footer a { color: dimgray; }
+   footer p has two element names and beats p, which has one. footer a beats the browser's own link rule.
+
+5. The tip should be crimson like the other notes, but stay italic. .tip and .note are equally specific, and .tip was written later, so it won. Fix: move the .tip rule above the .note rule. Now .note is the later one and wins the colour, and the italic from .tip stays, because .note does not set font-style.
+
+Any other fix that gets the same result for the right reason is fine. A fix that works by a style attribute does not count.

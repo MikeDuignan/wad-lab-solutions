@@ -1,0 +1,38 @@
+Week 4, exercise 3: the seven mistakes in mill-lane-cinema-broken, how DevTools shows each one, and the fixes
+
+Chrome 153 was used for the checks (verification/check_behaviour.mjs and verification/behaviour-results.txt). The look of DevTools changes a little from one version of Chrome to the next, but the evidence below does not.
+
+THE TWO LINKS (found first, because with these two broken the style sheet never loads and nothing else can be seen)
+
+index.html
+1. The link says href="css/styles.css". There is no css folder: styles.css is in the same folder as the page. A path is a route, and this one goes into a folder that is not there.
+   DevTools: the home page has no styling at all. In the Network panel (reload with it open), styles.css is red and its status is "(failed)". Select it and look at the Headers tab: the Request URL ends in /css/styles.css. In the Elements panel, select any element: the Styles pane lists only "user agent stylesheet" rules, none of ours.
+   Fix: href="styles.css".
+
+about.html
+2. The link says href="style.css", without the s. The file is called styles.css.
+   DevTools: the same as mistake 1, but the failed file is named style.css. This is the fault video 4 fixes in its last scene.
+   Fix: href="styles.css".
+
+THE FIVE MISTAKES IN styles.css (visible once the two links work)
+
+3. In the rule for h1, h2 the property is written colour, with a u. CSS spells it color.
+   DevTools: select a heading. Our rule is listed, but the colour line is struck through and has a yellow warning triangle; hover over the triangle and Chrome says "Unknown property name". The headings lose their dark red and take the colour of the body text, so they look almost black. Fix: colour -> color.
+
+4. In the rule for header, footer the value is written text-align: centre. CSS spells the value center.
+   DevTools: select the header. The line text-align: centre is struck through with a warning triangle (hover: "Invalid property value", because text-align is a real property but centre is not one of its values). The heading and the footer text stay on the left. Fix: centre -> center.
+
+5. In the footer rule the line background-color: #2b2b3a has no semicolon at the end.
+   DevTools: select the footer. The Styles pane shows one long line, background-color: #2b2b3a color: #f5f0e6, struck through with a warning triangle (hover: "Invalid property value"). The browser read the two lines as one value, could not understand it, and dropped it. So the footer has neither its background nor its text colour, although only one semicolon is missing. font-size, which comes after, still works. Fix: add the semicolon.
+
+6. The rule for the highlighted film starts highlight { with no full stop. Without the dot it is a type selector, for elements called highlight, and there are none.
+   DevTools: select the list item "Paper Boats". The Styles pane shows no rule of ours for it at all, even though the HTML has class="highlight". Fix: .highlight {
+
+7. In about.html the list item "Members: €5" should be dark red and bold. The rule for it is written .member, but an older rule, main ul .member, sets dimgray, and its selector (a class and two element names) is more specific.
+   DevTools: select the "Members" item. Both rules are listed; the .member rule is struck through (only its color line: font-weight is not set by the other rule, so the item is bold but gray). The rule above it, main ul .member, wins. Fix: make ours equally specific by writing main ul .member; ours comes later, so it wins. (Deleting the older rule would also work on this site, because nobody else owns it. On a Bootstrap page you cannot delete Bootstrap's rule, which is why video 4 teaches the other way.)
+
+WHAT THE VALIDATORS SAY (verification/css-validator-broken.txt and nu-broken-starter.txt)
+
+W3C Nu HTML validator, both pages: no errors or warnings. The HTML is valid; the mistakes 1 and 2 are about files, and the validator never opens them.
+W3C CSS validator, styles.css: reports three errors. Mistake 3: Property "colour" doesn't exist. The closest matching property name is "color". Mistake 4: "centre" is not a "text-align" value. Mistake 5: Missing a semicolon before the property name "color". It does not catch 6 (highlight is a legal selector) or 7 (two legal rules).
+So the validator finds three of the seven, and DevTools finds all seven.

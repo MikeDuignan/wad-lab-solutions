@@ -35,4 +35,12 @@ which have the same pictures, are on the Moodle course.
 | 2. A booking form | [`week-03/exercise-2-book-a-walk-form`](week-03/exercise-2-book-a-walk-form) |
 | 3. Find and fix the broken pictures and links | [`week-03/exercise-3-carrow-lake-fixed`](week-03/exercise-3-carrow-lake-fixed), and the seven mistakes in [`week-03/exercise-3-the-seven-mistakes.txt`](week-03/exercise-3-the-seven-mistakes.txt) |
 
+## Week 4
+
+| Exercise | Folder |
+|---|---|
+| 1. A plant shop website | [`week-04/exercise-1-fernhill-plant-shop`](week-04/exercise-1-fernhill-plant-shop) |
+| 2. Which CSS rule wins? | [`week-04/exercise-2-rowan-street-market-fixed`](week-04/exercise-2-rowan-street-market-fixed), plus the [predictions and fixes](week-04/exercise-2-the-predictions-and-fixes.txt) |
+| 3. Find and fix CSS problems | [`week-04/exercise-3-mill-lane-cinema-fixed`](week-04/exercise-3-mill-lane-cinema-fixed), plus the [seven mistakes](week-04/exercise-3-the-seven-mistakes.txt) |
+
 New weeks are added as they are covered.
