@@ -1,0 +1,32 @@
+Week 5, exercise 4: Script puzzles (answer key)
+
+PART 1: WHAT EACH PUZZLE SHOWS
+  Puzzle 1: message
+  Puzzle 2: 7
+  Puzzle 3: 34
+  Puzzle 4: Hello,world
+  Puzzle 5: onefive
+  Puzzle 6: 1020   (typing 10 then 20)
+  Puzzle 7: 30   (typing 10 then 20)
+  Puzzle 8: Nuala Brennan
+
+Why
+  1. The quotes make message ordinary text, so the word is written. Without quotes it would be the variable's value.
+  2. Two numbers: the plus sign adds. 3 + 4 is 7.
+  3. "3" and "4" in quotes are strings, so the plus sign joins them: 34.
+  4. The plus sign joins two strings; neither has a space, so they run together: Hello,world.
+  5. The browser skips a // comment to the end of its line and a /* */ comment up to the closing */, over several lines.
+     Only "one" and "five" are written, with nothing between them.
+  6. prompt always gives back text, even when digits are typed, so the plus sign joins "10" and "20": 1020.
+  7. Number turns each answer into a number, so the plus sign adds: 30.
+  8. The space inside the quotes is a string too: "Nuala" + " " + "Brennan" gives Nuala Brennan.
+
+PART 3: THE FIVE TICKETS
+  1. fix-1-total.html: document.write("total") writes the word. Take the quotes away: document.write(total);
+  2. fix-2-welcome.html: no space after the comma. Change "Hello," to "Hello, " (a space inside the quotes).
+  3. fix-3-sum.html: prompt gives text, so the plus sign joins "23" and "34" into 2334. Wrap each prompt in Number(...),
+     with two closing brackets at the end of each line. The page then shows 57.
+  4. fix-4-area.html: the area line adds the sides. Change + to *: var area = width * height; The page then shows 6.
+  5. fix-5-late.html: the script is after </body>. The page still shows the message in Chrome, but the Nu HTML validator
+     reports "Stray start tag script". Move the script element to just before </body>. The validator then reports nothing.
+     This is the only ticket the validator finds; the other four are logic mistakes that no validator can see.

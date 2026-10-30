@@ -1,0 +1,41 @@
+Week 5, exercise 2: Pennywell Bike Hire. The five mistakes (answer key)
+
+All five are mistakes in a page that is valid HTML and valid CSS: the Nu HTML validator and the CSS validator report
+nothing on the broken site. They are found by looking at the page at phone width, with Chrome's device toolbar
+(F12, then Ctrl+Shift+M), and by reading the Styles pane. They are listed in the order a student meets them. Some hide
+others: with mistake 2 in place the whole page is 960 pixels wide, so the picture looks as if it fits; fix 1 and 2 first.
+
+1. No viewport line (index.html, head)
+   Symptom: on a phone-sized frame the page looks like a tiny copy of a desktop page, with very small text, because
+   the phone pretends to be about 980 pixels wide and shrinks the page to fit.
+   Fix: add <meta name="viewport" content="width=device-width, initial-scale=1.0"> to the head, as in Week 1.
+
+2. main has width: 60rem (styles.css, the main rule)
+   Symptom: main is 960 pixels wide in a 375 pixel window. In a desktop-style window the page scrolls sideways; on a
+   phone, Chrome widens the layout to fit the page, so it appears zoomed out (as with mistake 1; the width of main
+   in the Elements panel tells the two apart). A fixed width does not adapt. Fix: max-width: 60rem, keeping margin: 0 auto.
+
+3. The img rule has max-width: 100% but no height: auto (styles.css)
+   Symptom: at 375 pixels the picture fits the width but is squashed: the height attribute (400) is kept while the width
+   shrinks, so the bicycle looks flattened. Fix: add height: auto to the img rule.
+
+4. The media query is above the rules it is meant to override (styles.css)
+   Symptom: at 375 pixels the links and the cards stay in a row. In the Styles pane, the flex-direction: column
+   declarations inside the @media rule are struck through: nav and .cards, written later with the same
+   specificity and flex-direction: row, win. Fix: move the whole @media block to the end of the style sheet.
+
+5. The article rule has width: 280px instead of flex: 1 (styles.css)
+   Symptom: in the row the cards are 280 pixels wide and do not fill the row (empty space at the right); stacked, at 375
+   pixels, they are 280 pixels wide, not as wide as the text column. Fix: replace width: 280px with flex: 1.
+
+What the fixed page does (measured in headless Chrome, see verification/behaviour-results.txt)
+   375 pixels: no sideways scroll; links in a column; the three cards stacked, each 327 pixels wide; the picture 327 x 218.
+   640 pixels: the same layout as at 375, because max-width: 40rem is 640 pixels and the query applies at 640.
+   641 pixels: links in a row; three cards in a row, equal width.
+   1200 pixels: text in a centred column 960 pixels wide; the header and footer still span the whole window; the picture 600 x 400.
+
+Optional challenge (mobile-first). The same layout written the other way round: the column layout is the base, and
+a min-width query adds the row. Replace the media query with
+   @media (min-width: 40.0625rem) { nav { flex-direction: row; } .cards { flex-direction: row; } }
+(written out on separate lines) and change the two base rules to flex-direction: column. 40.0625rem is 641 pixels, so
+the layout changes at the same place as before. Solution: solutions/week5-exercise2-pennywell-bike-hire-mobile-first.css
