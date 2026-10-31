@@ -45,11 +45,13 @@ which have the same pictures, are on the Moodle course.
 
 ## Week 5
 
+The answers below match the three exercises in the current Week 5 SCORM package.
+
 | Exercise | Folder |
 |---|---|
-| 1. Lay out a bookshop page | [`week-05/exercise-1-lantern-bookshop`](week-05/exercise-1-lantern-bookshop) |
-| 2. Fix the page that breaks on a phone | [`week-05/exercise-2-pennywell-bike-hire-fixed`](week-05/exercise-2-pennywell-bike-hire-fixed), the [five mistakes](week-05/exercise-2-the-five-mistakes.txt), and the optional [mobile-first rewrite](week-05/exercise-2-pennywell-bike-hire-mobile-first.css) |
-| 3. Write your first scripts | [`week-05/exercise-3-first-scripts`](week-05/exercise-3-first-scripts) |
-| 4. Script puzzles | [`week-05/exercise-4-script-puzzles-fixed`](week-05/exercise-4-script-puzzles-fixed), plus the [predictions and fixes](week-05/exercise-4-the-predictions-and-fixes.txt) |
+| 1. Layout with flexbox | [Harbour Bakery solution](week-05/exercise-1-layout-with-flexbox) |
+| 2. Make the bakery responsive | [Responsive bakery solution](week-05/exercise-2-responsive-bakery) |
+| 3. JavaScript variables and input | [JavaScript solution files](week-05/exercise-3-javascript-variables-and-input) |
 
+See the [Week 5 solution notes](week-05/solutions-explanation.txt) for the main concepts and expected results.
 New weeks are added as they are covered.

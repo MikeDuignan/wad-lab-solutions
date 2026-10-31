@@ -1,0 +1,22 @@
+WEEK 5 EXERCISES — SOLUTION NOTES
+
+Exercise 1: Flexbox layout
+- Make nav a flex container and use gap: 24px to space its links.
+- Make header a flex container, then use justify-content: space-between and align-items: center.
+- Make .cards a flex container with a 16px gap and flex-wrap: wrap.
+- Give each article flex: 1 so the cards share the row.
+- Give article position: relative. The .badge uses position: absolute with top and right offsets, so the card is its nearest positioned ancestor.
+
+Exercise 2: Responsive design
+- Add the viewport meta element so a phone uses its real screen width.
+- Limit main to 60rem and centre it with margin: 0 auto.
+- Set images to max-width: 100% and height: auto so they shrink without distortion.
+- At max-width: 40rem, change nav and .cards to flex-direction: column.
+- Test wide and narrow browser windows and check that there is no sideways scrolling.
+
+Exercise 3: JavaScript variables and input
+- The prompt function returns text. With two prompt results, + joins the strings, so 23 and 34 become 2334.
+- Number(prompt(...)) converts each answer to a number before + performs arithmetic; the result is 57.
+- The examples also show variables, comments, strings, numbers and document.write.
+
+The source CSS and completed examples in this folder match the Week 5 video examples. Students should first work from the separate starter downloads.
