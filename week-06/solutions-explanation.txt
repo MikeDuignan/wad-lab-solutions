@@ -1,0 +1,42 @@
+WEEK 6 LAB SOLUTIONS
+Decisions, loops, functions and function values
+
+These files match the four exercises in the Week 6 student lab package.
+Open each HTML file in a browser to run it, or in your editor to read the code.
+Some pages use prompt and alert pop-ups.
+
+1. DECISIONS
+Folder: week6-exercise1-decisions/
+Worked pages: ferry-fare.html and opening-hours.html
+Answer key: week6-exercise1-decisions/week6-exercise1-the-answers.txt
+
+2. LOOPS
+Folder: week6-exercise2-loops/
+Worked pages: floors.html, floors-while.html, times-table.html and reading-room.html
+Answer key: week6-exercise2-loops/week6-exercise2-the-answers.txt
+
+3. FUNCTIONS
+Folder: week6-exercise3-functions/
+Worked pages: lamp.html and visitor-tally.html
+Answer key: week6-exercise3-functions/week6-exercise3-the-answers.txt
+
+4. FUNCTIONS WITH VALUES
+Folder: week6-exercise4-function-values/
+Worked pages: turf.html and delivery.html
+Answer key: week6-exercise4-function-values/week6-exercise4-the-answers.txt
+
+Each exercise also has:
+- predict/: the eight prediction pages discussed in its answer key.
+- fix/: the four corrected debugging exercises.
+
+The answer keys explain the predictions, fixes and expected results.
+Their "Part 1" and "Part 2" labels refer to the prediction and fix sections;
+the student SCORM package presents the worked-page activities first.
+
+Teaching context: these solutions retain the Week 6 examples using
+document.write, inline onclick, prompt and alert. Week 7 introduces DOM methods
+and event listeners for changing page content, responding to events and styling
+elements.
+
+Source: Week 6 Exercises Solutions.zip, supplied with the Week 6 course materials.
+The 62 original files (58 HTML pages and four answer keys) are retained unchanged.

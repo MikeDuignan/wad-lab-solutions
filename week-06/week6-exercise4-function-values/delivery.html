@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery</title>
+  </head>
+  <body>
+    <h1>Delivery</h1>
+    <script>
+      // Delivery is free for orders of 50 or more, and 4 for smaller orders
+      function getDeliveryCost(orderTotal) {
+        if (orderTotal >= 50) {
+          return 0;
+        } else {
+          return 4;
+        }
+      }
+
+      var orderTotal = Number(prompt("Please enter the order total"));
+      document.write("Delivery cost: " + getDeliveryCost(orderTotal));
+    </script>
+  </body>
+</html>

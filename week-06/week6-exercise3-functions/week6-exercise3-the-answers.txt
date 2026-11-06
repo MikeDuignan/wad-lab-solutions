@@ -1,0 +1,21 @@
+Week 6, exercise 3: Functions (answer key)
+
+PART 1: PUZZLES. WHAT EACH PAGE SHOWS
+  Puzzle 1: Only the heading. The function is defined but nothing calls it.
+  Puzzle 2: Hi!Hi!  (the function is called twice and each call writes Hi!, straight after the last).
+  Puzzle 3: Only the heading. showReady with no brackets is only the name of the function, so nothing runs.
+  Puzzle 4: 10. total is outside the function, so each call adds 5 to the same variable: 0, 5, 10.
+  Puzzle 5: BAB. A function runs when it is called, in the order of the calls: writeB, writeA, writeB.
+  Puzzle 6: The pop-ups say 2 and then 3. clicks is created once and keeps its value between clicks: Add, Add makes 2; after Show total, Add makes 3.
+  Puzzle 7: Only Note saved. document.write after the page has loaded replaces the whole page, so the heading and the button disappear.
+  Puzzle 8: The pop-up says 0. Reloading runs the script again from the top, so tickets starts again at 0; the three sales are forgotten.
+
+PART 2: THE FOUR TICKETS
+  1. fix-1-welcome.html: the function is never called. Add welcome(); after it.
+  2. fix-2-thanks.html: onclick="sayThanks" has no brackets, so the click only names the function. Write onclick="sayThanks()".
+  3. fix-3-opening-times.html: document.write after the page has loaded replaces the whole page. Use alert("Open nine until five"); instead.
+  4. fix-4-stamp-total.html: stamps + 1; works out the answer and throws it away. Store it: stamps = stamps + 1;
+
+THE PAGES YOU BUILD
+  lamp.html: a function that is never called does nothing; three calls write Flash! three times; a click on a button that uses document.write replaces the page, so the heading and the button disappear; with alert the page stays.
+  visitor-tally.html: the sequence in the sheet (Add four times, Show visitors: 4; Add twice, Show: 6; Reset, Show: 0; Add, Show: 1; reload, Show: 0).

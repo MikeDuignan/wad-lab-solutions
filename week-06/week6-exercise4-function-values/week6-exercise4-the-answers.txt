@@ -1,0 +1,21 @@
+Week 6, exercise 4: Function values (answer key)
+
+PART 1: PUZZLES. WHAT EACH PAGE SHOWS
+  Puzzle 1: 8. doubleIt(4): n holds 4, and 4 * 2 is returned and written.
+  Puzzle 2: 5. add(2, 3) returns 2 + 3.
+  Puzzle 3: 23. The arguments are strings, and the plus sign joins strings. (Numbers added, strings joined.)
+  Puzzle 4: Done. getFive() returns 5, but nothing uses the value, so it is lost.
+  Puzzle 5: A. return ends the function, so the document.write("B") line after it never runs. The function gives back A, and the page writes it.
+  Puzzle 6: 6 on one line and -6 on the next. The arguments go to the parameters by position: 10 - 4, and then 4 - 10.
+  Puzzle 7: A pop-up that says 25, and a page with only the heading. side holds 5, which goes to the parameter n, and the returned 25 is what alert shows.
+  Puzzle 8: Hot Mild. 30 is greater than 25, so the first call returns Hot; 10 is not, so the second returns Mild.
+
+PART 2: THE FOUR TICKETS
+  1. fix-1-lost-value.html: getArea returns 60, but the call does nothing with it. Put the call inside alert: alert(getArea(wallWidth, wallHeight));
+  2. fix-2-swapped-values.html: the arguments go to the parameters by position. getChange(paid, cost) was called as getChange(cost, paid), so it worked out 13 - 20. Swap the arguments.
+  3. fix-3-text-not-numbers.html: prompt gives text, and the plus sign joins "20" and "4" into 204. Wrap each prompt in Number(...).
+  4. fix-4-name-only.html: document.write(getResult) writes the function itself, because getResult with no brackets is only the name. Call it: getResult(examScore).
+
+THE PAGES YOU BUILD
+  turf.html: the sheet gives the pop-ups at each step (40, 84, 48; nothing when the function returns and nothing uses the answer; 84 from the variable; 84 from the call inside alert; the sentence on the page).
+  delivery.html: a table of order totals is in the sheet (49 pays 4, 50 pays 0). The last version asks for the order total and passes the answer straight to the function: that is input through prompt, a function, and output with document.write.

@@ -1,0 +1,21 @@
+Week 6, exercise 1: Decisions (answer key)
+
+PART 1: PUZZLES. WHAT EACH PAGE SHOWS
+  Puzzle 1: Cool. 18 is not greater than 20, so the condition is false and the else block runs.
+  Puzzle 2: Plenty in stock. 10 is greater than or equal to 10 (the edge), so the condition is true.
+  Puzzle 3: Silver. The conditions are checked from the top and the first true one wins: 55 is not 90 or more, but it is 50 or more. The check for 25 or more is also true, but it is never made.
+  Puzzle 4: Bronze. The first condition, 95 >= 25, is true, so Bronze runs and the rest of the chain is skipped. 95 is also 50 or more and 90 or more, but those checks never happen. Put the highest band first.
+  Puzzle 5: Discount. age >= 65 is false, but member === true is true, and || needs only one side to be true.
+  Puzzle 6: Not breezy. wind > 5 is true, but wind < 10 is false for 12, and && needs both sides.
+  Puzzle 7: Take an umbrella. ! turns true into false, so !raining is false and the else block runs.
+  Puzzle 8: Busy Open the second door. These are two separate if statements, not a chain, so both conditions are tested and both are true. 120 is over 100 and over 50. (The space after Busy is inside its quotes.)
+
+PART 2: THE FOUR TICKETS
+  1. fix-1-library-card.html: the age 16 must be allowed, but the condition age > 16 is false for exactly 16. Change > to >=. Test at the edge: 16.
+  2. fix-2-group-tickets.html: 12 is 2 or more, so the first condition is true and the chain stops there. Put the highest band first: swap the two conditions so that people >= 10 is checked before people >= 2 (and swap the messages with them).
+  3. fix-3-star-rating.html: there are two separate if statements. For 7 the first writes its message, and then the second is tested on its own and writes Loved it too. Join them into one chain: change the second "if" to "} else if (stars >= 4) {" on the line of the closing brace.
+  4. fix-4-fairground-ride.html: the rule needs both things, so use && instead of ||. With ||, age 10 alone is enough, and the rider gets on.
+
+THE PAGES YOU BUILD
+  ferry-fare.html: table of ages and messages in the sheet; the order of the age < 5 and age < 16 tests matters (lowest band first, because the tests use "less than"). With them the wrong way round, age 3 gets Child fare.
+  opening-hours.html: Open from 9 up to but not including 17. hour >= 9 && hour < 17 is the same as the opposite of hour < 9 || hour >= 17, so the two programs give the same answers for every hour. Solution: week6-exercise1-decisions/opening-hours.html (the || version); the && version is in the sheet.

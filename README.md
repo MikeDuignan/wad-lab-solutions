@@ -54,4 +54,18 @@ The answers below match the three exercises in the current Week 5 SCORM package.
 | 3. JavaScript variables and input | [JavaScript solution files](week-05/exercise-3-javascript-variables-and-input) |
 
 See the [Week 5 solution notes](week-05/solutions-explanation.txt) for the main concepts and expected results.
+
+## Week 6
+
+The answers below match all four exercises in the Week 6 SCORM package.
+
+| Exercise | Folder | Answer key |
+|---|---|---|
+| 1. Decisions | [Worked pages, predictions and fixes](week-06/week6-exercise1-decisions) | [Decisions answers](week-06/week6-exercise1-decisions/week6-exercise1-the-answers.txt) |
+| 2. Loops | [Worked pages, predictions and fixes](week-06/week6-exercise2-loops) | [Loops answers](week-06/week6-exercise2-loops/week6-exercise2-the-answers.txt) |
+| 3. Functions | [Worked pages, predictions and fixes](week-06/week6-exercise3-functions) | [Functions answers](week-06/week6-exercise3-functions/week6-exercise3-the-answers.txt) |
+| 4. Functions with values | [Worked pages, predictions and fixes](week-06/week6-exercise4-function-values) | [Function values answers](week-06/week6-exercise4-function-values/week6-exercise4-the-answers.txt) |
+
+See the [Week 6 solution notes](week-06/solutions-explanation.txt) for the file guide and teaching context.
+
 New weeks are added as they are covered.

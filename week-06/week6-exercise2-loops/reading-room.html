@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading room</title>
+  </head>
+  <body>
+    <h1>Reading room door</h1>
+    <script>
+      /* Lets a visitor try the door word up to four times,
+         and stops as soon as the answer is right. */
+      var doorWord = "lantern";
+      var message = "The door stays locked";
+      for (var i = 1; i <= 4; i++) {
+        var answer = prompt("Attempt " + i + " of 4: enter the door word");
+        if (answer === doorWord) {
+          message = "Welcome to the reading room";
+          break;
+        }
+      }
+      document.write(message);
+    </script>
+  </body>
+</html>
