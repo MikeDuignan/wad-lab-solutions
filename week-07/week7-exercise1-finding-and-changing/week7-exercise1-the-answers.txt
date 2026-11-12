@@ -1,0 +1,21 @@
+Week 7, exercise 1: Finding and changing (answer key)
+
+PART 1: PUZZLES. WHAT EACH PAGE SHOWS
+  Puzzle 1: Open. getElementById finds the paragraph and textContent replaces its text.
+  Puzzle 2: Water, Coffee, Cocoa (one per line). querySelector returns only the first element that matches, and there are three li elements. The other two are not touched.
+  Puzzle 3: Was: Price: 5 euro. The script reads the old text into a const first, and then sets the new text, which contains the old text.
+  Puzzle 4: Seats left: 13. let allows the value to change: 20, then 15, then 13. The text is built only once, at the end.
+  Puzzle 5: Weather report to follow. The id in the script has -today on the end, so there is no such element: getElementById gives back null, the next line tries to set textContent on null, and the Console shows Cannot set properties of null. The page keeps its first text.
+  Puzzle 6: Score: not played yet. score is a const, so score = score + 5 is an error (Assignment to constant variable). The script stops at that line, and the last line never runs.
+  Puzzle 7: Pass 3, and then i is 4. With var, i belongs to the whole script. The loop ends when i is 4, so i is still 4 afterwards. The loop line sets Pass 1, then Pass 2, then Pass 3 (each replaces the last), and the last line adds the text after it.
+  Puzzle 8: Pass 3. With let, i exists only inside the braces of the loop. The last line uses i outside, so the Console shows i is not defined, and the line stops. The page keeps Pass 3 from the loop.
+
+PART 2: THE FOUR TICKETS
+  1. fix-1-opening-time.html: the id in the page is opening-time, and the script looks for opening-times. getElementById returns null, and setting textContent on null is an error. Make the id in the script match the page exactly.
+  2. fix-2-script-too-early.html: the script is above the paragraph, so when it runs the paragraph does not exist yet: null again. Move the script to the end of the body, just before the closing body tag.
+  3. fix-3-capital-letters.html: getElementbyId has a small b. The method is getElementById, with capital E, B and I, and a lowercase d. The Console says document.getElementbyId is not a function.
+  4. fix-4-wrong-item.html: querySelector('li') gives the first li, which is Monday. The Sunday item has the class weekend, so ask for '.weekend', with the dot, as a style sheet would.
+
+THE PAGES YOU BUILD
+  allotment.html: after step 1 only the opening days have changed; after step 2 the first rule has changed too; after step 3 the item with the class reminder has changed, which is the second item, not the first. The file on disk never changes: choose View page source, or reload, to see that.
+  plot-count.html: with const instead of let the Console shows Assignment to constant variable and the paragraph keeps Free plots: unknown. With the id mistyped as free-plot the Console shows Cannot set properties of null and the paragraph keeps its first text. The finished page shows Free plots: 9 and Waiting list: 7.

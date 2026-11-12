@@ -1,0 +1,21 @@
+Week 7, exercise 2: Changing the content (answer key)
+
+PART 1: PUZZLES. WHAT EACH PAGE SHOWS
+  Puzzle 1: Welcome. textContent replaces everything inside the paragraph, including the strong element, so no bold word is left.
+  Puzzle 2: Sale: <b>half price</b>, with the tags visible. textContent treats every character as plain text.
+  Puzzle 3: Sale: half price, with half price in bold. innerHTML reads the string as HTML, builds a real b element, and the tags themselves do not show.
+  Puzzle 4: Green and Black, as two list items. innerHTML parsed the two li tags and built two real list items. This is safe only because the string was written in the code.
+  Puzzle 5: More information, and then Goes to https://example.org/new. setAttribute changed the href, and getAttribute read it back. The words of the link did not change.
+  Puzzle 6: Bread only. createElement made a new li in memory and gave it text, but it was never attached to the list with append. A new element is not on the page until it is attached.
+  Puzzle 7: Red, Green, Blue. append adds each item as the last child, so the new items come after Red, in the order of the array.
+  Puzzle 8: One and Three. remove takes the second paragraph out of the page.
+
+PART 2: THE FOUR TICKETS
+  1. fix-1-tags-showing.html: textContent shows tags as characters. The markup was written in the code by the author, so innerHTML is the right tool: change textContent to innerHTML on that line.
+  2. fix-2-nothing-appears.html: the items are created and given text, but never attached. Add dayList.append(dayItem); inside the braces.
+  3. fix-3-note-stays.html: oldNotice.remove; names the method but does not call it. Add the brackets: oldNotice.remove();
+  4. fix-4-only-last.html: the li is created once, outside the loop. Each trip round the loop gives the same element new text and appends it again, which moves it, so one item is left with the last name. Move the createElement line inside the braces, so there is a new element on every trip.
+
+THE PAGES YOU BUILD
+  market-stall.html: the finished page shows the new heading, the summary in bold and italics, the offer as text with the tags on the first line and with the tags working on the second (half price in italics), the link, and the line Link goes to https://example.org/stall-menu. The Elements panel of the developer tools shows target="_blank", rel="noopener noreferrer" and the title on the link.
+  picnic-list.html: with no append nothing appears (only the heading and the draft label); with append four items appear in order; a fifth food in the array gives a fifth item with no other change; the last step removes the draft label.

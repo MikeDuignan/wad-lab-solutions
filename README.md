@@ -68,4 +68,17 @@ The answers below match all four exercises in the Week 6 SCORM package.
 
 See the [Week 6 solution notes](week-06/solutions-explanation.txt) for the file guide and teaching context.
 
+## Week 7
+
+The answers below match all four exercises in the Week 7 DOM SCORM package.
+
+| Exercise | Folder | Answer key |
+|---|---|---|
+| 1. Finding and changing | [Worked pages, predictions and fixes](week-07/week7-exercise1-finding-and-changing) | [Finding and changing answers](week-07/week7-exercise1-finding-and-changing/week7-exercise1-the-answers.txt) |
+| 2. Changing the content | [Worked pages, predictions and fixes](week-07/week7-exercise2-changing-content) | [Changing content answers](week-07/week7-exercise2-changing-content/week7-exercise2-the-answers.txt) |
+| 3. Events | [Worked pages, predictions and fixes](week-07/week7-exercise3-events) | [Events answers](week-07/week7-exercise3-events/week7-exercise3-the-answers.txt) |
+| 4. Styles | [Worked pages, predictions and fixes](week-07/week7-exercise4-styles) | [Styles answers](week-07/week7-exercise4-styles/week7-exercise4-the-answers.txt) |
+
+See the [Week 7 solution notes](week-07/solutions-explanation.txt) for the file guide and intentional error demonstrations.
+
 New weeks are added as they are covered.

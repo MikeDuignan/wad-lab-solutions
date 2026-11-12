@@ -1,0 +1,26 @@
+Week 7: The Document Object Model - solution guide
+
+Try the lab before using these answers. Download the repository ZIP, extract
+it, and open the HTML files in a browser to run the JavaScript. GitHub's file
+view displays the source code; it does not run the page.
+
+The four exercise folders match the Week 7 lab:
+1. Finding and changing: allotment.html and plot-count.html.
+2. Changing the content: market-stall.html and picnic-list.html.
+3. Events: cafe-board.html, lap-log.html and name-badge.html.
+4. Styles: platform-board.html and canteen-menu.html.
+
+Each folder also includes:
+- predict/: the eight original prediction puzzles. Some deliberately produce
+  Console errors or unexpected results; these are part of the exercise.
+- fix/: corrected versions of all four debugging tickets.
+- week7-exerciseN-the-answers.txt: prediction answers, explanations of the
+  debugging tickets, and expected results for the pages you build.
+
+cafe-board-head.html is the deliberate script-in-the-head error demonstration,
+not the working solution. The script runs before the button exists, so the
+Console reports an error. Use cafe-board.html for the working version.
+
+The input event in name-badge.html follows a user change to the input value,
+including typing, pasting and deletion. It does not fire for every key press
+or when JavaScript assigns a value.

@@ -1,0 +1,22 @@
+Week 7, exercise 3: Events (answer key)
+
+PART 1: PUZZLES. WHAT EACH PAGE SHOWS
+  Puzzle 1: Before the click: Wave and Nobody has waved yet. After one click: Hello from the bridge!
+  Puzzle 2: As soon as it loads: Hello from the bridge! A click does nothing. showWave() with brackets runs the function straight away, while the page loads, and gives the listener what it returned, which is nothing. Write showWave with no brackets.
+  Puzzle 3: Clicks: 3. clicks is declared outside the function with let, so it lives as long as the page, and each click adds one to the same variable.
+  Puzzle 4: Clicks: 1, however often you click. clicks is declared inside the function, so it is created again, as 0, on every click.
+  Puzzle 5: Basket: 105 after the first click and Basket: 1055 after the second. The value of an input is a string, so the plus joins: 10 and 5 make the text 105, and then 105 and 5 make 1055.
+  Puzzle 6: Basket: 15 after the first click and Basket: 20 after the second. Number turns the text into a number, so the plus adds.
+  Puzzle 7: Number gives: NaN for abc, and Number gives: 0 for an empty box. NaN means not a number. An empty string becomes 0, which is why the lap log (and puzzle 8) also tests for an empty box.
+  Puzzle 8: Total: 10 and the message Not a number. The first entry (4) is added. The x is not a number, so the message is written and return ends the function early. The 6 is added (4 + 6 = 10), but nothing clears the message, so it is still there.
+
+PART 2: THE FOUR TICKETS
+  1. fix-1-brackets.html: showTip() with brackets runs at once, while the page loads. Use showTip, with no brackets, in the listener.
+  2. fix-2-script-in-head.html: the script is in the head, so when it runs the button does not exist yet. getElementById gives back null and addEventListener on null is an error (Cannot read properties of null). Move the script to the end of the body.
+  3. fix-3-joined-text.html: eggInput.value is text, so the plus joins: 0 and 12 make 012, and 012 and 8 make 0128. Wrap the value in Number(...).
+  4. fix-4-forgets-total.html: let points = 0; is inside the function, so it starts again from 0 on every click and only the last entry shows. Declare it outside the function, above it.
+
+THE PAGES YOU BUILD
+  cafe-board.html: the sheet gives what the page shows after each step. With showSpecial() (brackets) the message is on the page as the page loads and the click does nothing. In the throw-away copy cafe-board-head.html the script is in the head: the click does nothing and the Console reports Cannot read properties of null (reading 'addEventListener').
+  lap-log.html: with the first version the totals are joined text (020, then 02015). With Number they add (20, then 35). With an empty box or the letters abc and no check the total would become NaN or not change: the check with Number.isNaN stops that. The finished page also counts sessions and has a reset button; the table in the sheet gives every step.
+  name-badge.html: the input event fires when the user changes the input value, including typing, pasting and deletion, so the badge preview updates as the value changes. It does not fire for every key press or when JavaScript assigns a value.

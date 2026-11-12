@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canteen menu</title>
+    <style>
+      .menu-item {
+        margin-bottom: 12px;
+        padding: 12px;
+        border: 2px solid gray;
+        background-color: white;
+      }
+
+      .special {
+        border-color: seagreen;
+        background-color: honeydew;
+        font-weight: bold;
+      }
+
+      .sold-out {
+        color: gray;
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Canteen menu</h1>
+    <p class="menu-item">Soup of the day: pea and mint</p>
+    <p class="menu-item" id="pasta-item">Pasta bake with salad</p>
+    <p class="menu-item" id="curry-item">Vegetable curry</p>
+    <button id="special-button">Toggle the special</button>
+    <button id="sold-out-button">Mark pasta as sold out</button>
+    <button id="back-button">Pasta is back</button>
+    <button id="check-button">Is pasta sold out?</button>
+    <p id="menu-report"></p>
+    <script>
+      const soupItem = document.querySelector('.menu-item');
+      const pastaItem = document.getElementById('pasta-item');
+      const specialButton = document.getElementById('special-button');
+      const soldOutButton = document.getElementById('sold-out-button');
+      const backButton = document.getElementById('back-button');
+      const checkButton = document.getElementById('check-button');
+      const menuReport = document.getElementById('menu-report');
+
+      function toggleSpecial() {
+        soupItem.classList.toggle('special');
+      }
+
+      function markPastaSoldOut() {
+        pastaItem.classList.add('sold-out');
+      }
+
+      function bringPastaBack() {
+        pastaItem.classList.remove('sold-out');
+      }
+
+      function checkPasta() {
+        menuReport.textContent = 'Pasta sold out: ' + pastaItem.classList.contains('sold-out');
+      }
+
+      specialButton.addEventListener('click', toggleSpecial);
+      soldOutButton.addEventListener('click', markPastaSoldOut);
+      backButton.addEventListener('click', bringPastaBack);
+      checkButton.addEventListener('click', checkPasta);
+    </script>
+  </body>
+</html>

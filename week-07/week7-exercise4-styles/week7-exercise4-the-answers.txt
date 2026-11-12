@@ -1,0 +1,21 @@
+Week 7, exercise 4: Styles (answer key)
+
+PART 1: PUZZLES. WHAT EACH PAGE SHOWS
+  Puzzle 1: notice urgent, and the sign becomes bold and red. add puts the class on, after the class it already has. className shows the whole class attribute.
+  Puzzle 2: notice urgent. add does nothing if the class is already there. The class appears once.
+  Puzzle 3: notice. remove does nothing if the class is not there, and gives no error.
+  Puzzle 4: notice. toggle adds the class, and then the second toggle takes it off again.
+  Puzzle 5: false then true. The first contains is asked before add, the second after it. The plus joins a true or false value to the text.
+  Puzzle 6: notice .urgent. The dot belongs to selectors in CSS, not to the class name. The page now has a class literally named .urgent, which no rule matches, so the sign does not become bold or red.
+  Puzzle 7: letter-spacing: 3px; background-color: khaki; The style property wrote an inline style attribute. JavaScript spells the properties in camel case (letterSpacing, backgroundColor), and the attribute uses the CSS spelling again.
+  Puzzle 8: Urgent: true after the first click, and the same after the third. Clicks 1 and 3 add the class and click 2 takes it off: true, false, true. Only the last report stays on the page.
+
+PART 2: THE FOUR TICKETS
+  1. fix-1-hyphen-name.html: in JavaScript letter-spacing is read as letter minus spacing, which cannot be assigned to, so the whole script fails to load (Invalid left-hand side in assignment) and no listener is added. Write letterSpacing, with a capital S.
+  2. fix-2-dot-in-class.html: toggle('.highlighted') makes a class with a dot in its name, which the style sheet does not know. Write 'highlighted', without the dot.
+  3. fix-3-no-quotes.html: bold without quotes is taken as the name of a variable, which does not exist (bold is not defined). The value of a style is a string: 'bold'.
+  4. fix-4-missing-dot.html: querySelector('notice') looks for an element named notice (a tag), finds none and gives null. A class needs the dot in a selector: '.notice'. Compare ticket 2, where the dot is wrong in the other direction: selectors have the dot, class names do not.
+
+THE PAGES YOU BUILD
+  platform-board.html: the style property sets one style at a time, in camel case, as strings. After the first click the Elements panel shows style="text-transform: uppercase; letter-spacing: 2px;" on the paragraph. After Back to normal it shows text-transform: none; letter-spacing: normal. Reloading removes the style attribute because it was never in the file.
+  canteen-menu.html: the CSS defines the look in classes and JavaScript only switches them. The long if / else version and the one-line toggle behave the same. With add('.sold-out') (the dot mistake) the class attribute shows menu-item .sold-out and the item does not change. The finished page: Toggle the special switches the soup; Mark pasta as sold out and Pasta is back switch the pasta item; Is pasta sold out? writes Pasta sold out: true or false.
