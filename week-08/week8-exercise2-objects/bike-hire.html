@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakeside Bikes</title>
+  </head>
+  <body>
+    <h1>Lakeside Bikes</h1>
+    <p>Model: <span id="bike-model"></span></p>
+    <p>Price per day: €<span id="bike-price"></span></p>
+    <p>Frame size: <span id="bike-size"></span></p>
+    <p>Helmet color: <span id="helmet-color"></span></p>
+    <p>Hired from: <span id="hire-shop"></span></p>
+    <script>
+      // Find the elements
+      const bikeModel = document.getElementById('bike-model');
+      const bikePrice = document.getElementById('bike-price');
+      const bikeSize = document.getElementById('bike-size');
+      const helmetColorDisplay = document.getElementById('helmet-color');
+      const hireShop = document.getElementById('hire-shop');
+
+      // One bike, described by an object
+      const bike = {
+        model: 'Trailblazer',
+        size: 'Medium',
+        pricePerDay: 18,
+        available: true,
+        shop: {
+          name: 'Old Mill Cycles',
+          county: 'Mayo',
+        },
+      };
+
+      // Read properties with a dot, and with square brackets
+      bikeModel.textContent = bike.model;
+      bikePrice.textContent = bike['pricePerDay'];
+
+      // A property name that is held in a variable
+      const detail = 'size';
+      bikeSize.textContent = bike[detail];
+
+      // The bike is reduced in price
+      bike.pricePerDay = 15;
+      bikePrice.textContent = bike.pricePerDay;
+
+      // A property that did not exist before
+      bike.helmetColor = 'Dark green';
+      helmetColorDisplay.textContent = bike.helmetColor;
+
+      // The shop's name is one level further in
+      hireShop.textContent = bike.shop.name;
+    </script>
+  </body>
+</html>

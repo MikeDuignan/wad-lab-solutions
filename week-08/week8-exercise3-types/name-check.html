@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name check</title>
+  </head>
+  <body>
+    <h1>Name check</h1>
+    <label for="visitor-name-input">Your name</label>
+    <input type="text" id="visitor-name-input">
+    <button id="greet-button">Greet me</button>
+    <p id="greeting">Nobody greeted yet.</p>
+    <script>
+      const visitorNameInput = document.getElementById('visitor-name-input');
+      const greetButton = document.getElementById('greet-button');
+      const greeting = document.getElementById('greeting');
+
+      function greetVisitor() {
+        const visitorName = visitorNameInput.value;
+        if (visitorName) {
+          greeting.textContent = `Hello, ${visitorName}!`;
+        } else {
+          greeting.textContent = 'Please type your name.';
+        }
+      }
+
+      greetButton.addEventListener('click', greetVisitor);
+    </script>
+  </body>
+</html>

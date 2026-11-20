@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types lab</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        font-family: Consolas, monospace;
+      }
+
+      th,
+      td {
+        border: 1px solid gray;
+        padding: 4px 12px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Types lab</h1>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">What</th>
+          <th scope="col">Result</th>
+          <th scope="col">Type</th>
+        </tr>
+      </thead>
+      <tbody id="result-rows"></tbody>
+    </table>
+    <script>
+      // Adds one row to the results table: the label, the result and its type.
+      const resultRows = document.getElementById('result-rows');
+
+      function show(label, result) {
+        const row = document.createElement('tr');
+        for (const text of [label, result, typeof result]) {
+          const cell = document.createElement('td');
+          cell.textContent = text;
+          row.append(cell);
+        }
+        resultRows.append(row);
+      }
+
+      // Three values, three types
+      const seats = 40;
+      const venue = 'Pier Hall';
+      const doorsOpen = false;
+      show('seats', seats);
+      show('venue', venue);
+      show('doors open', doorsOpen);
+
+      // One variable, two types
+      let ticketCode = 7;
+      show('ticket code', ticketCode);
+      ticketCode = '7';
+      show('ticket code, changed', ticketCode);
+
+      // Plus with numbers and strings
+      show('number plus number', 2 + 3);
+      show('string plus string', 'Pier' + 'Hall');
+      show('number plus string', 2 + '3');
+
+      // Times and minus turn strings into numbers
+      show('number times string', 4 * '5');
+      show('number minus letters', 4 - 'xyz');
+
+      // Converting on purpose
+      show('number plus converted string', 2 + Number('3'));
+      show('Number of an empty string', Number(''));
+      show('Number of letters', Number('xyz'));
+    </script>
+  </body>
+</html>

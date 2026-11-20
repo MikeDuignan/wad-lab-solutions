@@ -1,0 +1,22 @@
+Week 8, exercise 3: Types, coercion and comparison (answer key)
+
+PART 1: PUZZLES. WHAT EACH PAGE SHOWS
+  Puzzle 1: number, string, boolean. The quotes make the difference: 12 is a number and '12' is a string. true has no quotes and is a boolean. typeof gives the name of the type.
+  Puzzle 2: 53 and 8. When either side of a plus is a string, plus joins, and the number 3 is turned into text first. With two numbers, plus adds.
+  Puzzle 3: 6 and 20. Minus and times have no joining to do, so they convert the strings to numbers: 10 minus 4 is 6, and 10 times 2 is 20.
+  Puzzle 4: NaN is a number, and plus one it is NaN. abc cannot become a number, so the multiplication gives NaN, not a number. NaN is itself a special number value, so typeof says number, and any further arithmetic with it gives NaN again.
+  Puzzle 5: 43, 0, NaN. Number('42') is the number 42, so the plus adds. An empty string becomes 0. The text 4 2 has a space in the middle and does not spell a number, so it gives NaN.
+  Puzzle 6: true false false true. == converts the string to a number first, so 9 == '9' is true. === compares the types as well, and a number is not a string. != is the opposite of == and !== is the opposite of ===.
+  Puzzle 7: true true false. The empty string becomes 0, and so does the string 0, so each equals the number 0. But when both sides are strings nothing is converted, and an empty string is not the same text as 0. That is why the course uses three equals signs.
+  Puzzle 8: Truthy values: 3. The falsy values are false, 0, the empty string, null, undefined and NaN, so 0, '', null, undefined and NaN are falsy. Truthy are 'hello', 'false' and '0': any text that is not empty counts, even the text false and the text 0.
+
+PART 2: THE FOUR TICKETS
+  1. fix-1-joined-total.html: the value of an input is always a string, even in a number box, so the plus joins 2 and 3 into the text 23. Convert each value with Number before adding: Number(adultsInput.value) + Number(childrenInput.value).
+  2. fix-2-string-number.html: answerInput.value is the text 42, and three equals signs never convert, so a string is never strictly equal to the number 42. Convert on purpose, then compare: Number(answerInput.value) === 42.
+  3. fix-3-typeof-capital.html: typeof gives the name of a type in small letters: number, string, boolean. It never gives Number, so the comparison with 'Number' is always false. Compare with 'number'.
+  4. fix-4-empty-name.html: the value of an empty text box is the empty string, '', and not null, so the test with null is never true. Test for the empty string: guestName === ''. (The shorter if (guestName) with the two branches swapped also works, because an empty string is falsy.)
+
+THE PAGES YOU BUILD
+  types-lab.html: the sheet's table gives every row. The same variable holds a number and then a string (ticketCode), and JavaScript does not complain. 2 + '3' is the string 23, 4 * '5' is the number 20, 4 - 'xyz' is NaN with type number, Number('') is 0 and Number('xyz') is NaN.
+  compare-lab.html: 7 == '7' is true and 7 === '7' is false; '' == 0 is true, '0' == 0 is true, '' == '0' is false (both are strings, so nothing is converted); != and !== are the matching opposites. Number('7') === 7 is true: convert on purpose, then compare with three signs.
+  name-check.html: an empty box gives Please type your name. (the empty string is falsy). Aoife gives Hello, Aoife!. The text 0 is truthy, because it is a non-empty string. A single space is also a non-empty string, so it is truthy and the greeting is Hello, !.

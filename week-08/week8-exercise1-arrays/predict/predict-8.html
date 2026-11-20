@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 8</title>
+  </head>
+  <body>
+    <h1>Puzzle 8</h1>
+    <p id="report">Report to follow.</p>
+    <script>
+      // The same arithmetic as a random pick, but with a number that is fixed
+      const report = document.getElementById('report');
+      const names = ['Ada', 'Ben', 'Cian', 'Dara', 'Eli'];
+      const draw = 0.9;
+      const index = Math.floor(draw * names.length);
+      report.textContent = 'Index ' + index + ' is ' + names[index];
+    </script>
+  </body>
+</html>

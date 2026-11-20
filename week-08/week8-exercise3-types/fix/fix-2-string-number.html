@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Times table quiz</title>
+  </head>
+  <body>
+    <h1>Times table quiz</h1>
+    <label for="answer-input">What is 6 times 7?</label>
+    <input type="text" id="answer-input">
+    <button id="check-button">Check</button>
+    <p id="quiz-result">Type an answer.</p>
+    <script>
+      const answerInput = document.getElementById('answer-input');
+      const checkButton = document.getElementById('check-button');
+      const quizResult = document.getElementById('quiz-result');
+
+      function checkAnswer() {
+        if (Number(answerInput.value) === 42) {
+          quizResult.textContent = 'Correct!';
+        } else {
+          quizResult.textContent = 'Not quite.';
+        }
+      }
+
+      checkButton.addEventListener('click', checkAnswer);
+    </script>
+  </body>
+</html>

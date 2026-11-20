@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library sale</title>
+  </head>
+  <body>
+    <h1>Library sale</h1>
+    <ul id="sale-list"></ul>
+    <script>
+      const books = [
+        { title: 'Salt Road', price: 12 },
+        { title: 'Quiet Fields', price: 9 },
+      ];
+      const saleList = document.getElementById('sale-list');
+      for (const book of books) {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${book.title}: €${book.price}`;
+        saleList.append(listItem);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note keeper</title>
+  </head>
+  <body>
+    <h1>Note keeper</h1>
+    <label for="note-input">Note</label>
+    <input type="text" id="note-input">
+    <button id="save-note-button">Save note</button>
+    <button id="forget-note-button">Forget note</button>
+    <p id="note-display">No note saved yet.</p>
+    <script>
+      const noteInput = document.getElementById('note-input');
+      const saveNoteButton = document.getElementById('save-note-button');
+      const forgetNoteButton = document.getElementById('forget-note-button');
+      const noteDisplay = document.getElementById('note-display');
+
+      function saveNote() {
+        localStorage.setItem('note', noteInput.value);
+        noteDisplay.textContent = 'Note saved.';
+      }
+
+      saveNoteButton.addEventListener('click', saveNote);
+
+      function forgetNote() {
+        localStorage.removeItem('note');
+        noteDisplay.textContent = 'No note saved yet.';
+      }
+
+      forgetNoteButton.addEventListener('click', forgetNote);
+
+      const savedNote = localStorage.getItem('note');
+      if (savedNote !== null) {
+        noteDisplay.textContent = `Saved note: ${savedNote}`;
+      }
+    </script>
+  </body>
+</html>

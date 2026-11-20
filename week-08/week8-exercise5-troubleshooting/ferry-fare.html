@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferry fare</title>
+  </head>
+  <body>
+    <h1>Island Ferry fares</h1>
+    <label for="passenger-count">How many passengers?</label>
+    <input type="number" id="passenger-count" min="1" value="4">
+    <button id="fare-button">Work out the fare</button>
+    <p id="fare-total">Press the button to see the fare.</p>
+    <script>
+      const passengerInput = document.getElementById('passenger-count');
+      const fareButton = document.getElementById('fare-button');
+      const fareDisplay = document.getElementById('fare-total');
+      const farePerPassenger = 6.5;
+
+      function showFare() {
+        const passengers = Number(passengerInput.value);
+        const fare = passengers * farePerPassenger;
+        fareDisplay.textContent = 'Fare: €' + fare;
+      }
+
+      fareButton.addEventListener('click', showFare);
+    </script>
+  </body>
+</html>

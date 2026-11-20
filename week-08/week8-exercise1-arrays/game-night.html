@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game night</title>
+  </head>
+  <body>
+    <h1>Game night</h1>
+    <ul id="game-list"></ul>
+    <p>Tonight we play: <span id="game-pick"></span></p>
+    <button id="pick-button">Pick another game</button>
+    <script>
+      // The games we own
+      const games = ['Chess', 'Ludo', 'Dominoes', 'Snakes and Ladders'];
+
+      // Show every game
+      const gameList = document.getElementById('game-list');
+      for (const game of games) {
+        const item = document.createElement('li');
+        item.textContent = game;
+        gameList.append(item);
+      }
+
+      // Pick a game now, and again on every click
+      const gamePick = document.getElementById('game-pick');
+      const pickButton = document.getElementById('pick-button');
+
+      function pickGame() {
+        const pickIndex = Math.floor(Math.random() * games.length);
+        gamePick.textContent = games[pickIndex];
+      }
+
+      pickButton.addEventListener('click', pickGame);
+      pickGame();
+    </script>
+  </body>
+</html>

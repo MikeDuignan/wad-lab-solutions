@@ -81,4 +81,16 @@ The answers below match all four exercises in the Week 7 DOM SCORM package.
 
 See the [Week 7 solution notes](week-07/solutions-explanation.txt) for the file guide and intentional error demonstrations.
 
+## Week 8
+
+The answers below match all five exercises in the Week 8 SCORM package.
+
+| Exercise | Folder | Answer key |
+|---|---|---|
+| 1. Arrays | [Worked pages, predictions and fixes](week-08/week8-exercise1-arrays) | [Arrays answers](week-08/week8-exercise1-arrays/week8-exercise1-the-answers.txt) |
+| 2. Objects | [Worked pages, predictions and fixes](week-08/week8-exercise2-objects) | [Objects answers](week-08/week8-exercise2-objects/week8-exercise2-the-answers.txt) |
+| 3. Types, coercion and comparison | [Worked pages, predictions and fixes](week-08/week8-exercise3-types) | [Types answers](week-08/week8-exercise3-types/week8-exercise3-the-answers.txt) |
+| 4. JSON and browser storage | [Worked pages, predictions and fixes](week-08/week8-exercise4-json-storage) | [JSON and storage answers](week-08/week8-exercise4-json-storage/week8-exercise4-the-answers.txt) |
+| 5. Troubleshooting | [Worked pages, predictions and fixes](week-08/week8-exercise5-troubleshooting) | [Troubleshooting answers](week-08/week8-exercise5-troubleshooting/week8-exercise5-the-answers.txt) |
+
 New weeks are added as they are covered.

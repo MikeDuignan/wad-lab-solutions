@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike fleet</title>
+  </head>
+  <body>
+    <h1>Bike fleet</h1>
+    <p>Bikes in the fleet: <span id="bike-count"></span></p>
+    <p>First bike: <span id="first-bike"></span></p>
+    <ul id="bike-list"></ul>
+    <p id="fleet-total"></p>
+    <script>
+      // Each bike is an object, and every object has the same properties
+      const bikes = [
+        { id: 1, model: 'Trailblazer', pricePerDay: 18 },
+        { id: 2, model: 'City Glider', pricePerDay: 12 },
+        { id: 3, model: 'Kids Scout', pricePerDay: 8 },
+      ];
+      bikes.push({ id: 4, model: 'Tandem', pricePerDay: 30 });
+
+      // Pick an object by its index, and a property by its name
+      const firstBike = document.getElementById('first-bike');
+      firstBike.textContent = bikes[0].model;
+      const bikeCount = document.getElementById('bike-count');
+      bikeCount.textContent = bikes.length;
+
+      // One list item for each bike
+      const bikeList = document.getElementById('bike-list');
+      for (const bike of bikes) {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${bike.model}: €${bike.pricePerDay} a day`;
+        bikeList.append(listItem);
+      }
+
+      // The price of one day on every bike
+      let fleetPrice = 0;
+      for (const bike of bikes) {
+        fleetPrice = fleetPrice + bike.pricePerDay;
+      }
+      const fleetTotal = document.getElementById('fleet-total');
+      fleetTotal.textContent = `One day on every bike: €${fleetPrice}`;
+    </script>
+  </body>
+</html>

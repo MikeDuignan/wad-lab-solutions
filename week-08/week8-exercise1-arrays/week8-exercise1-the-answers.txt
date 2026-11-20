@@ -1,0 +1,21 @@
+Week 8, exercise 1: Arrays (answer key)
+
+PART 1: PUZZLES. WHAT EACH PAGE SHOWS
+  Puzzle 1: red and blue. The index counts from zero, so colors[0] is red and colors[2] is the third value, blue.
+  Puzzle 2: Fourth day: undefined. The array has indexes 0, 1 and 2. Index 3 is past the end, which gives undefined (no value). It is not an error, so the Console stays empty.
+  Puzzle 3: People waiting: 5. push adds a value to the end of the array that is already there, so a const array can grow. Three values and two pushes make five.
+  Puzzle 4: Last stop: Station. After it: undefined. The length is 4, so the last index is 3 (length minus one) and stops[3] is Station. stops[4] is past the end.
+  Puzzle 5: Reds Blues Greens undefined. The condition says less than or equal to, so i runs 0, 1, 2 and 3. There are only indexes 0 to 2, so the fourth pass reads teams[3], which is undefined. Use less than (i < teams.length) so that the last index is length minus one.
+  Puzzle 6: Scores: 3, and a red error in the Console. const forbids giving the name a new value, so scores = [16, 23] stops the script. The last line never runs, so the report keeps what the first line wrote. Console: Uncaught TypeError: Assignment to constant variable, reported on line 17.
+  Puzzle 7: false, 2, -1. The search is exact, so a small t does not match Tea and includes gives false. indexOf gives the position of Cocoa, which is 2, and minus one for Milk, which is not there.
+  Puzzle 8: Index 4 is Eli. Five names times 0.9 is 4.5, and Math.floor rounds down to 4. A draw that is at most 0.999 and below one can never give 5, so the index is always a real one.
+
+PART 2: THE FOUR TICKETS
+  1. fix-1-empty-bullets.html: in for...of, thing already holds the value (Towel, then Sunscreen, then Sandwiches), so packingThings[thing] looks up an index called Towel, which does not exist, and gives undefined. Use item.textContent = thing.
+  2. fix-2-length-brackets.html: length is a property, not a method, so it has no brackets. seats.length() tries to run the number 5 as a function, and the Console says seats.length is not a function. Write seats.length. Before the fix the Console shows Uncaught TypeError: seats.length is not a function, on line 15.
+  3. fix-3-first-item.html: finishers[1] is the second value, Tadhg. The first value is at index 0, so the winner is finishers[0].
+  4. fix-4-includes-case.html: includes is exact, capital letters included. 'friday' is not 'Friday', so the test is false and the line inside the braces never runs. Search for 'Friday'.
+
+THE PAGES YOU BUILD
+  ferry-times.html: after step 1 the first line says 08:30 and the count says 4 (Sailings today: 4). The counting loop and for...of give the same four items. push('18:30') gives a fifth sailing, and the count and the list follow with no other change, because both ask the array each time the page loads. Giving the const a new array (sailings = ['08:00'];) stops the script with Assignment to constant variable. indexOf('12:30') gives 2, so the note appears; includes('12:30') does the same job and says what it means. The search is exact: includes('12.30') finds nothing. The last sailing is at index length minus one.
+  game-night.html: Math.random() alone is a number from 0 up to but never including 1; times games.length it runs from 0 up to just under the length; Math.floor rounds that down to a whole number, which is always a real index. Work out the table on the sheet like this: with four games, 0 gives Chess, 0.25 gives Ludo (0.25 times 4 is 1), 0.5 gives Dominoes (2), 0.75 gives Snakes and Ladders (3), 0.999 gives Snakes and Ladders (3.996 rounds down to 3). After games.push('Cluedo') there are five games, so 0.999 gives Cluedo (4.995 rounds down to 4) and 0.75 gives Snakes and Ladders (3.75 rounds down to 3). Using games.length, not the number 4, is what keeps the pick right when the array grows.

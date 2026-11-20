@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee order</title>
+  </head>
+  <body>
+    <h1>Coffee order</h1>
+    <p>Order: <span id="order-detail">to follow</span></p>
+    <script>
+      const order = { drink: 'Flat white', extras: { syrup: 'Hazelnut', shots: 2 } };
+      const orderDetail = document.getElementById('order-detail');
+      orderDetail.textContent = order.drink + ' with ' + order.extras.syrup + ' syrup';
+    </script>
+  </body>
+</html>

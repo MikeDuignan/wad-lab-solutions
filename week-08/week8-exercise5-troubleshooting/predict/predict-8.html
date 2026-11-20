@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 8</title>
+  </head>
+  <body>
+    <h1>Puzzle 8</h1>
+    <p id="step-one">Step one is waiting.</p>
+    <p id="step-two">Step two is waiting.</p>
+    <p id="step-three">Step three is waiting.</p>
+    <script>
+      // Load the page. Which paragraphs change, and what does the Console say?
+      const stepOne = document.getElementById('step-one');
+      const stepThree = document.getElementById('step-three');
+      stepOne.textContent = 'Step one is done.';
+      const missing = document.getElementById('step-two-message');
+      missing.textContent = 'Step two is done.';
+      stepThree.textContent = 'Step three is done.';
+    </script>
+  </body>
+</html>

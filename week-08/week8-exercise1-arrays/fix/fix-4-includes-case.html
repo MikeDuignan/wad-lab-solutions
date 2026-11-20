@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market days</title>
+  </head>
+  <body>
+    <h1>Market days</h1>
+    <p id="market-note">No market note yet.</p>
+    <script>
+      const marketDays = ['Tuesday', 'Friday', 'Saturday'];
+      const marketNote = document.getElementById('market-note');
+      if (marketDays.includes('Friday')) {
+        marketNote.textContent = 'The market is open on Friday.';
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list</title>
+  </head>
+  <body>
+    <h1>Shopping list</h1>
+    <button id="save-list-button">Save a sample list</button>
+    <ul id="shopping-items"></ul>
+    <script>
+      const saveListButton = document.getElementById('save-list-button');
+      const shoppingItems = document.getElementById('shopping-items');
+
+      function saveSampleList() {
+        localStorage.setItem('shopping-list', JSON.stringify(['Milk', 'Eggs', 'Tea']));
+      }
+
+      saveListButton.addEventListener('click', saveSampleList);
+
+      const savedListText = localStorage.getItem('shopping-list');
+      if (savedListText !== null) {
+        const shoppingList = JSON.parse(savedListText);
+        for (const thing of shoppingList) {
+          const listItem = document.createElement('li');
+          listItem.textContent = thing;
+          shoppingItems.append(listItem);
+        }
+      }
+    </script>
+  </body>
+</html>

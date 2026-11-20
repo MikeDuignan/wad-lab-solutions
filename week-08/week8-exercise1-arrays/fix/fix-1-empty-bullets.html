@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packing list</title>
+  </head>
+  <body>
+    <h1>Packing list</h1>
+    <ul id="packing-list"></ul>
+    <script>
+      const packingThings = ['Towel', 'Sunscreen', 'Sandwiches'];
+      const packingList = document.getElementById('packing-list');
+      for (const thing of packingThings) {
+        const item = document.createElement('li');
+        item.textContent = thing;
+        packingList.append(item);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome desk</title>
+  </head>
+  <body>
+    <h1>Welcome desk</h1>
+    <label for="guest-name-input">Guest name</label>
+    <input type="text" id="guest-name-input">
+    <button id="welcome-button">Welcome</button>
+    <p id="welcome-message">No greeting yet.</p>
+    <script>
+      const guestNameInput = document.getElementById('guest-name-input');
+      const welcomeButton = document.getElementById('welcome-button');
+      const welcomeMessage = document.getElementById('welcome-message');
+
+      function welcomeGuest() {
+        const guestName = guestNameInput.value;
+        if (guestName === '') {
+          welcomeMessage.textContent = 'Please type your name.';
+        } else {
+          welcomeMessage.textContent = `Hello, ${guestName}!`;
+        }
+      }
+
+      welcomeButton.addEventListener('click', welcomeGuest);
+    </script>
+  </body>
+</html>

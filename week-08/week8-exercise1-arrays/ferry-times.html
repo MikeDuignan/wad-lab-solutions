@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Island Ferry</title>
+  </head>
+  <body>
+    <h1>Island Ferry sailings</h1>
+    <p>First sailing: <span id="first-sailing"></span></p>
+    <p>Sailings today: <span id="sailing-count"></span></p>
+    <ul id="sailing-list"></ul>
+    <p id="midday-note"></p>
+    <p>Last sailing: <span id="last-sailing"></span></p>
+    <script>
+      // The sailing times, in order
+      const sailings = ['08:30', '10:00', '12:30', '15:00'];
+      // A late sailing is added at the end
+      sailings.push('18:30');
+
+      // The first sailing, and how many there are
+      const firstSailing = document.getElementById('first-sailing');
+      firstSailing.textContent = sailings[0];
+      const sailingCount = document.getElementById('sailing-count');
+      sailingCount.textContent = sailings.length;
+
+      // Every sailing, with for...of
+      const sailingList = document.getElementById('sailing-list');
+      for (const sailing of sailings) {
+        const item = document.createElement('li');
+        item.textContent = sailing;
+        sailingList.append(item);
+      }
+
+      // Is there a midday sailing?
+      const middayNote = document.getElementById('midday-note');
+      if (sailings.includes('12:30')) {
+        middayNote.textContent = 'There is a midday sailing.';
+      }
+
+      // The last sailing is one place before the length
+      const lastSailing = document.getElementById('last-sailing');
+      lastSailing.textContent = sailings[sailings.length - 1];
+    </script>
+  </body>
+</html>

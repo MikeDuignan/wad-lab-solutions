@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat reservation</title>
+  </head>
+  <body>
+    <h1>Seat reservation</h1>
+    <label for="reserver-input">Name</label>
+    <input type="text" id="reserver-input">
+    <button id="reserve-button">Reserve</button>
+    <p id="reservation-display">No reservation yet.</p>
+    <script>
+      const reserverInput = document.getElementById('reserver-input');
+      const reserveButton = document.getElementById('reserve-button');
+      const reservationDisplay = document.getElementById('reservation-display');
+
+      function reserveSeats() {
+        const reservation = { name: reserverInput.value, seats: 2 };
+        localStorage.setItem('reservation', JSON.stringify(reservation));
+        reservationDisplay.textContent = 'Reserved.';
+      }
+
+      reserveButton.addEventListener('click', reserveSeats);
+
+      const savedText = localStorage.getItem('reservation');
+      if (savedText !== null) {
+        const reservation = JSON.parse(savedText);
+        reservationDisplay.textContent = `Reserved: ${reservation.seats} seats for ${reservation.name}`;
+      }
+    </script>
+  </body>
+</html>

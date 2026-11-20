@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood log</title>
+  </head>
+  <body>
+    <h1>Mood log</h1>
+    <label for="mood-input">How do you feel?</label>
+    <input type="text" id="mood-input">
+    <button id="mood-button">Save mood</button>
+    <p id="mood-display">No mood saved yet.</p>
+    <script>
+      const moodInput = document.getElementById('mood-input');
+      const moodButton = document.getElementById('mood-button');
+      const moodDisplay = document.getElementById('mood-display');
+
+      function saveMood() {
+        const entry = { mood: moodInput.value, level: 3 };
+        localStorage.setItem('mood-entry', JSON.stringify(entry));
+        moodDisplay.textContent = 'Mood saved.';
+      }
+
+      moodButton.addEventListener('click', saveMood);
+
+      const savedText = localStorage.getItem('mood-entry');
+      if (savedText !== null) {
+        const entry = JSON.parse(savedText);
+        moodDisplay.textContent = `Last mood: ${entry.mood}, level ${entry.level}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tide table</title>
+  </head>
+  <body>
+    <h1>Tide table</h1>
+    <button id="tide-button">Show the next high tide</button>
+    <p id="tide-message">Press the button.</p>
+    <script>
+      const tideButton = document.getElementById('tide-button');
+      const tideMessage = document.getElementById('tide-message');
+      const nextTide = '14:20';
+
+      function showTide() {
+        tideMessage.textContent = 'Next high tide: ' + nextTide;
+      }
+
+      tideButton.addEventListener('click', showTide);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packing list</title>
+  </head>
+  <body>
+    <h1>Packing list</h1>
+    <label for="item-input">Item to pack</label>
+    <input type="text" id="item-input">
+    <button id="add-item-button">Add item</button>
+    <button id="clear-list-button">Clear list</button>
+    <ul id="packing-items"></ul>
+    <script>
+      const itemInput = document.getElementById('item-input');
+      const addItemButton = document.getElementById('add-item-button');
+      const clearListButton = document.getElementById('clear-list-button');
+      const packingItems = document.getElementById('packing-items');
+
+      let items = [];
+      const savedText = localStorage.getItem('packing');
+      if (savedText !== null) {
+        items = JSON.parse(savedText);
+      }
+
+      function showItems() {
+        packingItems.textContent = '';
+        for (const entry of items) {
+          const listItem = document.createElement('li');
+          listItem.textContent = entry;
+          packingItems.append(listItem);
+        }
+      }
+
+      function addItem() {
+        if (itemInput.value === '') {
+          return;
+        }
+        items.push(itemInput.value);
+        localStorage.setItem('packing', JSON.stringify(items));
+        itemInput.value = '';
+        showItems();
+      }
+
+      addItemButton.addEventListener('click', addItem);
+
+      function clearList() {
+        items = [];
+        localStorage.removeItem('packing');
+        showItems();
+      }
+
+      clearListButton.addEventListener('click', clearList);
+
+      showItems();
+    </script>
+  </body>
+</html>

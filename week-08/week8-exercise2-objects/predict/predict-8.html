@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 8</title>
+  </head>
+  <body>
+    <h1>Puzzle 8</h1>
+    <p id="report">Report to follow.</p>
+    <script>
+      // An array of objects: an index picks the object, a dot picks the property
+      const report = document.getElementById('report');
+      const pupils = [
+        { name: 'Aoife', age: 9 },
+        { name: 'Cathal', age: 11 },
+        { name: 'Sive', age: 10 },
+      ];
+      report.textContent = pupils[1].name + ' is ' + pupils[1].age + '. Pupils: ' + pupils.length + '. pupils.name is ' + pupils.name;
+    </script>
+  </body>
+</html>

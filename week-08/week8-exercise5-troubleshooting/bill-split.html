@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill splitter</title>
+  </head>
+  <body>
+    <h1>Bill splitter</h1>
+    <label for="total-input">Meal total in euro</label>
+    <input type="number" id="total-input" value="90">
+    <label for="people-input">Number of people</label>
+    <input type="number" id="people-input" value="4">
+    <button id="split-button">Split the bill</button>
+    <p id="split-result">Press the button to see each share.</p>
+    <script>
+      const totalInput = document.getElementById('total-input');
+      const peopleInput = document.getElementById('people-input');
+      const splitButton = document.getElementById('split-button');
+      const splitResult = document.getElementById('split-result');
+      const tip = 9;
+
+      function splitBill() {
+        const total = Number(totalInput.value);
+        const people = Number(peopleInput.value);
+        const share = (total + tip) / people;
+        splitResult.textContent = `Each person pays €${share}`;
+      }
+
+      splitButton.addEventListener('click', splitBill);
+    </script>
+  </body>
+</html>

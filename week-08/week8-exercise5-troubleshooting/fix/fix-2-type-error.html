@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind report</title>
+  </head>
+  <body>
+    <h1>Wind report</h1>
+    <p id="wind-message">Wind report to follow.</p>
+    <script>
+      const windMessage = document.getElementById('wind-message');
+      const knots = 12.6;
+      windMessage.textContent = 'Wind: ' + Math.floor(knots) + ' knots';
+    </script>
+  </body>
+</html>

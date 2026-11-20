@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 5</title>
+  </head>
+  <body>
+    <h1>Puzzle 5</h1>
+    <button id="show-button">Show the message</button>
+    <p id="report">Report to follow.</p>
+    <script>
+      // Click the button. Does anything happen, and what does the Console say?
+      const showButton = document.getElementById('show-button');
+      const report = document.getElementById('report');
+
+      function showMessage() {
+        report.textContent = 'The ferry is on time.';
+
+      showButton.addEventListener('click', showMessage);
+    </script>
+  </body>
+</html>

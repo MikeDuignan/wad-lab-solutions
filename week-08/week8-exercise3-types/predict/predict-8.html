@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 8</title>
+  </head>
+  <body>
+    <h1>Puzzle 8</h1>
+    <p id="report">Report to follow.</p>
+    <script>
+      // Truthy and falsy: how many of these values make an if run its braces?
+      const report = document.getElementById('report');
+      const values = [0, 'hello', '', 'false', null, undefined, NaN, '0'];
+      let truthyCount = 0;
+      for (const value of values) {
+        if (value) {
+          truthyCount = truthyCount + 1;
+        }
+      }
+      report.textContent = 'Truthy values: ' + truthyCount;
+    </script>
+  </body>
+</html>

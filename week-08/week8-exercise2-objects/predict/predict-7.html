@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 7</title>
+  </head>
+  <body>
+    <h1>Puzzle 7</h1>
+    <p id="owner-object">Owner report to follow.</p>
+    <p id="owner-name">Name report to follow.</p>
+    <script>
+      // An object inside an object
+      const ownerObject = document.getElementById('owner-object');
+      const ownerName = document.getElementById('owner-name');
+      const cafe = { name: 'Quay Cafe', owner: { name: 'Mairead', county: 'Clare' } };
+      ownerObject.textContent = 'Owner: ' + cafe.owner;
+      ownerName.textContent = 'Owner: ' + cafe.owner.name + ' from ' + cafe.owner.county;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 5</title>
+  </head>
+  <body>
+    <h1>Puzzle 5</h1>
+    <p id="price-report">Price report to follow.</p>
+    <p id="seat-report">Seat report to follow.</p>
+    <script>
+      // The price changes after the page has been written
+      const priceReport = document.getElementById('price-report');
+      const seatReport = document.getElementById('seat-report');
+      const ticket = { seat: 'B7', price: 20 };
+      priceReport.textContent = 'Price: ' + ticket.price;
+      ticket.price = 15;
+      seatReport.textContent = 'Seat: ' + ticket.seat;
+    </script>
+  </body>
+</html>

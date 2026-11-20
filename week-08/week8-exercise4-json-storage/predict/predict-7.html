@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 7</title>
+  </head>
+  <body>
+    <h1>Puzzle 7</h1>
+    <p id="before-clear">Before report to follow.</p>
+    <p id="after-clear">After report to follow.</p>
+    <script>
+      // removeItem deletes one pair, clear deletes them all
+      const beforeClear = document.getElementById('before-clear');
+      const afterClear = document.getElementById('after-clear');
+      localStorage.setItem('a', 'one');
+      localStorage.setItem('b', 'two');
+      localStorage.setItem('c', 'three');
+      localStorage.removeItem('b');
+      beforeClear.textContent = localStorage.getItem('a') + ' ' + localStorage.getItem('b') + ' ' + localStorage.getItem('c');
+      localStorage.clear();
+      afterClear.textContent = localStorage.getItem('a') + ' ' + localStorage.getItem('c');
+    </script>
+  </body>
+</html>

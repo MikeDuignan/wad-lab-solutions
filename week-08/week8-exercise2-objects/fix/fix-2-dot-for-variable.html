@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trail guide</title>
+  </head>
+  <body>
+    <h1>Trail guide</h1>
+    <p id="trail-detail">Detail to follow.</p>
+    <script>
+      const trail = { name: 'Lakeshore Loop', length: 6, difficulty: 'Easy' };
+      const field = 'difficulty';
+      const trailDetail = document.getElementById('trail-detail');
+      trailDetail.textContent = 'Difficulty: ' + trail[field];
+    </script>
+  </body>
+</html>

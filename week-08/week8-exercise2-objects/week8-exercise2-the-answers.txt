@@ -1,0 +1,21 @@
+Week 8, exercise 2: Objects (answer key)
+
+PART 1: PUZZLES. WHAT EACH PAGE SHOWS
+  Puzzle 1: blue large, 6. A dot and a property name read the value stored under that name. The order of the lines in the report is the order the script asks for them.
+  Puzzle 2: With brackets: 30. With a dot: undefined. plant[detail] uses the text inside detail, height, as the name. plant.detail looks for a property that is really called detail, and there is none, so the result is undefined. No error.
+  Puzzle 3: Colour: undefined. The property is spelt color, the American way, as in CSS. mug.colour is not there, so the result is undefined, and a misspelt name gives no error. Check the spelling when a value is missing.
+  Puzzle 4: Room 12 has 4 guests. const protects the name room, so room always means this one object. It does not stop the properties inside the object from changing: 2, then 3, then 4.
+  Puzzle 5: Price: 20 and Seat: B7. The first report line wrote 20 on the page. The price then changed to 15, but the page does not follow an object: it keeps the text it was last given, and no line writes the new price.
+  Puzzle 6: Before: undefined. After: red. pen had no cap property, so reading it gives undefined. The assignment creates the property, and from then on it can be read. The same equals sign changes a property that exists and adds one that does not.
+  Puzzle 7: Owner: [object Object] and Owner: Mairead from Clare. cafe.owner is a whole object, and an object turned into text gives only [object Object]. A second dot reaches inside it: cafe.owner.name and cafe.owner.county.
+  Puzzle 8: Cathal is 11. Pupils: 3. pupils.name is undefined. pupils[1] is the second object. pupils.length counts the objects. pupils.name asks the array, not an object in it, for a property called name, and an array has none.
+
+PART 2: THE FOUR TICKETS
+  1. fix-1-object-object.html: order.extras is a whole object, and an object turned into text gives [object Object]. Reach into it with a second dot: order.extras.syrup.
+  2. fix-2-dot-for-variable.html: trail.field looks for a property that is really named field, and there is none, so the result is undefined. The name is held in the constant field, so use square brackets: trail[field].
+  3. fix-3-missing-comma.html: the line before year has no comma after 'The Lanterns', so the browser reads year as a second word in the same property and reports Unexpected identifier 'year' on the line where it gave up. A comma goes between properties. Because it is a syntax error, none of the script ran. Before the fix the Console shows Uncaught SyntaxError: Unexpected identifier 'year', on line 16.
+  4. fix-4-misspelt-property.html: the property is title, and the script reads titel. A misspelt property name gives undefined, not an error. Compare the name in the loop with the name in the object, letter by letter.
+
+THE PAGES YOU BUILD
+  bike-hire.html: bike.model and bike['pricePerDay'] read the same way; bike[detail] reads the property whose name is held in the constant, and bike.detail looks for a property literally named detail and gives undefined (the page shows Size: undefined, and there is no error). The price changed to 15, but the page keeps 18 until the second price line writes it again. bike.helmetColor = ... creates a property that the literal never mentioned. bike.shop on its own shows [object Object]; bike.shop.name shows Old Mill Cycles. Giving the const a whole new object (bike = ...) is an error: Assignment to constant variable.
+  bike-list.html: bikes[0].model is Trailblazer (an index picks the object, a dot picks the property), and bikes.length is 3, then 4 after the push. With listItem.textContent = bike every item shows [object Object]. The template literal with ${bike.model} and ${bike.pricePerDay} fills each item. The total is 18 + 12 + 8 + 30 = 68.

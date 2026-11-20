@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album page</title>
+  </head>
+  <body>
+    <h1>Album page</h1>
+    <p id="album-line">Album details to follow.</p>
+    <script>
+      const album = {
+        title: 'Evening Tide',
+        artist: 'The Lanterns',
+        year: 2019,
+      };
+      const albumLine = document.getElementById('album-line');
+      albumLine.textContent = album.title + ' by ' + album.artist + ' (' + album.year + ')';
+    </script>
+  </body>
+</html>

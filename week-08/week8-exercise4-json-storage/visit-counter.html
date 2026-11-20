@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit counter</title>
+  </head>
+  <body>
+    <h1>Visit counter</h1>
+    <p id="site-visits">Visits to this site: 0</p>
+    <p id="tab-visits">Visits in this tab: 0</p>
+    <button id="reset-button">Reset the counters</button>
+    <script>
+      const siteVisitsDisplay = document.getElementById('site-visits');
+      let siteVisits = 0;
+      const savedSiteVisits = localStorage.getItem('site-visits');
+      if (savedSiteVisits !== null) {
+        siteVisits = Number(savedSiteVisits);
+      }
+      siteVisits = siteVisits + 1;
+      localStorage.setItem('site-visits', siteVisits);
+      siteVisitsDisplay.textContent = `Visits to this site: ${siteVisits}`;
+
+      const tabVisitsDisplay = document.getElementById('tab-visits');
+      let tabVisits = 0;
+      const savedTabVisits = sessionStorage.getItem('tab-visits');
+      if (savedTabVisits !== null) {
+        tabVisits = Number(savedTabVisits);
+      }
+      tabVisits = tabVisits + 1;
+      sessionStorage.setItem('tab-visits', tabVisits);
+      tabVisitsDisplay.textContent = `Visits in this tab: ${tabVisits}`;
+
+      const resetButton = document.getElementById('reset-button');
+
+      function resetCounters() {
+        localStorage.removeItem('site-visits');
+        sessionStorage.removeItem('tab-visits');
+        siteVisitsDisplay.textContent = 'Visits to this site: 0';
+        tabVisitsDisplay.textContent = 'Visits in this tab: 0';
+      }
+
+      resetButton.addEventListener('click', resetCounters);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare lab</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        font-family: Consolas, monospace;
+      }
+
+      th,
+      td {
+        border: 1px solid gray;
+        padding: 4px 12px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Compare lab</h1>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">What</th>
+          <th scope="col">Result</th>
+          <th scope="col">Type</th>
+        </tr>
+      </thead>
+      <tbody id="result-rows"></tbody>
+    </table>
+    <script>
+      // Adds one row to the results table: the label, the result and its type.
+      const resultRows = document.getElementById('result-rows');
+
+      function show(label, result) {
+        const row = document.createElement('tr');
+        for (const text of [label, result, typeof result]) {
+          const cell = document.createElement('td');
+          cell.textContent = text;
+          row.append(cell);
+        }
+        resultRows.append(row);
+      }
+
+      // Two equals signs convert first, three do not (loose equality, on purpose)
+      show('number 7 == string 7', 7 == '7');
+      show('number 7 === string 7', 7 === '7');
+
+      // Some results of loose equality that surprise people
+      show('empty string == 0', '' == 0);
+      show('string 0 == 0', '0' == 0);
+      show('empty string == string 0', '' == '0');
+
+      // Not equal comes in two forms as well
+      show('7 != string 7', 7 != '7');
+      show('7 !== string 7', 7 !== '7');
+
+      // Convert on purpose, then compare with three signs
+      show('Number of string 7 === 7', Number('7') === 7);
+    </script>
+  </body>
+</html>

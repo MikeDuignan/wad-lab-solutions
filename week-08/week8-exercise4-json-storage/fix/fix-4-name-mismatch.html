@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor memory</title>
+  </head>
+  <body>
+    <h1>Visitor memory</h1>
+    <label for="visitor-input">Name</label>
+    <input type="text" id="visitor-input">
+    <button id="remember-button">Remember me</button>
+    <p id="welcome-back">Nobody remembered yet.</p>
+    <script>
+      const visitorInput = document.getElementById('visitor-input');
+      const rememberButton = document.getElementById('remember-button');
+      const welcomeBack = document.getElementById('welcome-back');
+
+      function rememberVisitor() {
+        localStorage.setItem('visitor-name', visitorInput.value);
+        welcomeBack.textContent = 'Remembered.';
+      }
+
+      rememberButton.addEventListener('click', rememberVisitor);
+
+      const savedName = localStorage.getItem('visitor-name');
+      if (savedName !== null) {
+        welcomeBack.textContent = `Welcome back, ${savedName}!`;
+      }
+    </script>
+  </body>
+</html>

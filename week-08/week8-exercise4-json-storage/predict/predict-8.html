@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 8</title>
+  </head>
+  <body>
+    <h1>Puzzle 8</h1>
+    <p id="report">Report to follow.</p>
+    <script>
+      // JSON typed by hand with single quotes
+      const report = document.getElementById('report');
+      report.textContent = 'Reading the text...';
+      const text = `{'name': 'Aoife'}`;
+      const person = JSON.parse(text);
+      report.textContent = 'Hello, ' + person.name;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 7</title>
+  </head>
+  <body>
+    <h1>Puzzle 7</h1>
+    <p id="report">Report to follow.</p>
+    <script>
+      // Load the page. What does the report say, and what lines does console.log put in the Console?
+      const report = document.getElementById('report');
+      const prices = [4, 6, 10];
+      let total = 0;
+      for (const price of prices) {
+        total = total + price;
+        console.log('Running total:', total);
+      }
+      report.textContent = 'Total: ' + total;
+    </script>
+  </body>
+</html>

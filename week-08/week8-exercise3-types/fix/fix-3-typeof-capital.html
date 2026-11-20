@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price check</title>
+  </head>
+  <body>
+    <h1>Price check</h1>
+    <p id="type-message">Checking the price...</p>
+    <script>
+      const price = 12;
+      const typeMessage = document.getElementById('type-message');
+      if (typeof price === 'number') {
+        typeMessage.textContent = 'The price is a number.';
+      } else {
+        typeMessage.textContent = 'The price is not a number.';
+      }
+    </script>
+  </body>
+</html>

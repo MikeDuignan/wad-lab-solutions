@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family tickets</title>
+  </head>
+  <body>
+    <h1>Family tickets</h1>
+    <button id="total-button">Work out the total</button>
+    <p id="total-message">Total to follow.</p>
+    <script>
+      const totalButton = document.getElementById('total-button');
+      const totalMessage = document.getElementById('total-message');
+      const adultPrice = 12;
+      const childPrice = 7;
+      const adults = 2;
+      const children = 3;
+
+      function showTotal() {
+        const total = adults * adultPrice + children * childPrice;
+        totalMessage.textContent = 'Total: €' + total;
+      }
+
+      totalButton.addEventListener('click', showTotal);
+    </script>
+  </body>
+</html>

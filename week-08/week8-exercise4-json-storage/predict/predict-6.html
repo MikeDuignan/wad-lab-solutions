@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Student name: write your name here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 6</title>
+  </head>
+  <body>
+    <h1>Puzzle 6</h1>
+    <p id="report">Report to follow.</p>
+    <script>
+      // JSON.parse builds an object from text
+      const report = document.getElementById('report');
+      const text = '{"width":4,"height":"5"}';
+      const box = JSON.parse(text);
+      report.textContent = (box.width + box.height) + ' and ' + (box.width * box.height);
+    </script>
+  </body>
+</html>
