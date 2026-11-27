@@ -1,0 +1,22 @@
+Week 9, exercise 1: Getting started with Bootstrap (answer key)
+
+PART 1: seaview.html
+  The finished page is seaview.html in this folder. Step 1: the Bootstrap style sheet (Reboot) is already in effect: with the link commented out the page uses the browser's own serif font, its own margins and its own heading sizes; with the link in it uses a system sans-serif font, a body margin of 0 and a line height of 1.5.
+  Step 2, the container's width at each window width: 400 gives 400 (below 576 it fills the window), 600 gives 540, 800 gives 720, 1000 gives 960, 1200 gives 1140, 1400 gives 1320. Container padding is inside those numbers.
+  Step 3: container-fluid fills the whole window at 1400 pixels, so the text runs nearly edge to edge with its padding inside; container stops at 1320 and leaves equal space at each side.
+  The spacing table (one step is a rem, 16 pixels): m-0 removes all margin (0). p-1 puts padding of 0.25 rem (4 px) on all four sides. p-2: 0.5 rem (8 px). mt-3: margin on the top only, 1 rem (16 px). p-4: padding on all four sides, 1.5 rem (24 px). mt-5: margin on the top only, 3 rem (48 px).
+  Notes: the class name takes no dot because the dot is part of a CSS selector, not of the name; in the class attribute you give the name alone. Margin is space outside the border and padding is space inside it. display-4 only changes how the heading looks: the element, and so its level, is still an h1. The integrity attribute is a fingerprint of the expected file; the browser refuses a download that does not match it, so it must belong to the same version as the address.
+
+PART 3: PUZZLES. WHAT EACH PAGE SHOWS
+  Puzzle 1: Alpha is the largest (display-1) and Gamma is the smallest (display-6). All three are still h2 elements: the classes change the look, not the level.
+  Puzzle 2: Box B has centred text. Box A's text is at the left: container centres the wrapper, not the text inside it.
+  Puzzle 3: 16 pixels above Box B (mt-3 is 1 rem) and 48 pixels above Box C (mt-5 is 3 rem). Box D is the tallest: p-4 adds 24 pixels of padding above and below the text, so it is 48 pixels taller than Box B; its text is also moved 24 pixels in from the left.
+  Puzzle 4: At 400 both tiles are the same width, 376 (the window less the padding). At 800 they differ: container tile 696, container-fluid tile 776. At 1400 the container tile is 1296 wide and the container-fluid tile 1376.
+  Puzzle 5: At 400 the first picture (img-fluid) shrinks to 376 wide, in proportion. The second keeps its 480 width, runs past the edge of the window and the page can be scrolled sideways. At 1000 both are 480 wide: img-fluid limits a picture to its parent's width but never makes it larger than its own width.
+  Puzzle 6: One (btn btn-primary) looks like a button: blue, filled, with padding. Two (btn alone) has the padding and the shape of a button but no colour, so it looks like dark text with no visible box. Three (btn-primary alone) is an ordinary underlined link: btn-primary only sets the colours that btn uses, so without btn nothing uses them. btn is the missing class.
+
+PART 4: THE FOUR TICKETS
+  1. fix-1-dot-container.html: the class is written .container. A class attribute takes the name alone, so the page has no class called container and nothing centres or pads it. Write class="container".
+  2. fix-2-text-centre.html: text-centre is the British spelling. Bootstrap's class is text-center, so the h1 has no centring. Write text-center.
+  3. fix-3-missing-hyphen.html: mt3 is not a class. The class is mt-3, with a hyphen between the property and side and the step. Write mt-3.
+  4. fix-4-version-mismatch.html: the web address says 5.3.8 but the integrity text is the fingerprint of 5.3.9, so the browser refuses the file. The Console says: Failed to find a valid digest in the 'integrity' attribute for resource ... The resource has been blocked. Make the address 5.3.9 again, as in the starting page.

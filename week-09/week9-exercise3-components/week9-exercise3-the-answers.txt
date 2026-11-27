@@ -1,0 +1,20 @@
+Week 9, exercise 3: Components (answer key)
+
+PART 1: plant-home.html (the finished page is plant-home.html in this folder)
+  The answers to the table: the links show in the bar from 992 pixels up (navbar-expand-lg), and below that the bar shows the brand and the menu button (the icon with three lines). The first button is bigger with btn-lg and the second is only an outline with btn-outline-secondary. card-body is the inner box that holds the text and keeps space round it. rounded-circle on a picture that is not square gives an oval, because it draws the rounded boundary at half of each side; the file itself does not change. table-responsive on the wrapper stops the page scrolling sideways.
+  Step 6: without the table class there are no stripes, no hover shade, and the cells lose their padding (they fall back to the browser's 1 pixel), so the text sits against the lines. Only the cell borders from table-bordered remain. Bootstrap's table design is not applied to every table: the table class opts in, and the stripes and the hover shade depend on it.
+  Notes: use an a element for a link that goes somewhere (it moves the visitor to another address or place), and a button element for an action on the page, such as opening the menu. The class only changes the look, not the job. The toggler button has only an icon on it, and a screen reader reads the aria-label to give the button a name.
+
+PART 3: PUZZLES
+  Puzzle 1: 400: the menu button is visible and the links are hidden. 800: the links are visible and the button is gone (md starts at 768). 1200: the links, no button.
+  Puzzle 2: C (btn-sm) is the smallest, then B and D (the default size, the same height), then A (btn-lg) is the largest. B and D are the same size. D is the one that is not filled: it is only an outline.
+  Puzzle 3: In row one (h-100) the three cards are the same height as the tallest. In row two the cards have only the height of their own content, so the cards with the short text are shorter.
+  Puzzle 4: The first picture has rounded corners. The second is not a circle: the file is 600 by 360, not square, so rounded-circle gives an oval. The third has a thin border and a little padding inside it (a thumbnail) with slightly rounded corners.
+  Puzzle 5: Table One has no classes and so has no lines or stripes at all. Table Two (table) has a line under each row and padding, but no stripes and no hover shade. Table Three (all four classes) has stripes on alternate body rows, cell borders and a hover shade on the row under the pointer. In Tables One and Two nothing changes under the pointer.
+  Puzzle 6: Table two, the unwrapped one, makes the whole page scroll sideways, because text-nowrap keeps each cell on one line and the table is wider than the window. Table one has the table-responsive wrapper, so it scrolls inside its own box and the page stays still.
+
+PART 4: THE FOUR TICKETS
+  1. fix-1-toggler-target.html: data-bs-target is "shop-nav", with no hash. The target is a CSS selector, so it needs #shop-nav; without the hash it looks for an element called shop-nav, finds none and does nothing (no error either). Write #shop-nav.
+  2. fix-2-card-body.html: the heading, text and button are directly inside the card, with no card-body. The card is only the outer box. Wrap the three elements in a div with the class card-body.
+  3. fix-3-table-class.html: the table has table-striped, table-hover and table-bordered but not table. The other classes only change values that the table class sets, so without it they have no effect. Add table.
+  4. fix-4-table-wrapper.html: the wrapper div has no table-responsive class. Add it, so that the extra width scrolls inside the wrapper.

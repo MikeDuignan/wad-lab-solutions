@@ -1,0 +1,29 @@
+Week 9, exercise 2: The Bootstrap grid (answer key)
+
+PART 1: grid-tiles.html (the finished page is grid-tiles.html in this folder)
+  Step 3 (4, 4 and 6 units): Ferns and Cacti stay on the first line and Herbs starts the second. Four plus four is eight, so four units are left, and a column that needs six cannot fit there, so the whole column moves down. It is still one row element. No class names a breakpoint, so it is the same at 400, 800 and 1200.
+  Step 4: with col-auto in the middle, that tile takes only the width its content needs (a narrow box round its word), and the two outer tiles share the rest equally.
+  Step 8: from 768 pixels up the notice takes eight units, and the offset puts two units before it and leaves two after it, so it is centred. Below 768 it fills the line.
+  Step 9: justify-content-center centres the pair across the row when there is space left, and align-items-center puts the short tile halfway down beside the tall one. At 400 the two columns stack, because col-md-5 does not apply below 768.
+  The table of tiles per line (first line first):
+    After step 3: 400: 2, 1. 800: 2, 1. 1200: 2, 1.
+    After step 5 (two columns of col-md-6): 400: 1, 1. 800: 2. 1200: 2.
+    After step 6 (col-12 col-md-6 col-lg-4): 400: 1, 1, 1. 800: 2, 1. 1200: 3.
+    After step 7 (six tiles with row-cols): 400: 1, 1, 1, 1, 1, 1. 800: 2, 2, 2. 1200: 3, 3.
+
+PART 2: shop-grid.html
+  The finished page is shop-grid.html in this folder: one product across at 400, two at 800 and three at 1200, in the same order. Six products belong in one row because Bootstrap wraps the columns for you; two rows of three would fix the page to one window size, because the HTML itself would say where the lines break. row-cols-lg-3 counts items across a line (three), not units out of twelve.
+
+PART 3: PUZZLES
+  Puzzle 1: 3 on one line at every width (400, 800 and 1200): col-4 names no breakpoint and three times four is twelve.
+  Puzzle 2: 2 then 1 at every width. Two columns of six fill the line and the third, Three, is alone on the second line, because col-6 applies at every width, a phone included.
+  Puzzle 3: 400: 1, 1, 1. 800: 3. 1200: 3. col-md-4 starts at 768, and 800 is above it.
+  Puzzle 4: 400: 1, 1, 1, 1. 800: 2, 2 (col-sm-6 starts at 576, and col-lg-3 does not start until 992). 1200: 4 on one line.
+  Puzzle 5: 400: 2 per line, 4 lines. 800: 4 per line, 2 lines. 1200: 4 per line, 2 lines. row-cols-md-4 starts at 768 and nothing in the page changes it at 1200.
+  Puzzle 6: At 400 each of One and Two fills its line (nothing applies below 768). At 800 One is half the width and starts a quarter of the way along, so it is centred (col-md-6 offset-md-3 is 3 empty units, 6 used, 3 empty). Two is a third of the width and sits at the right edge, with eight empty units before it.
+
+PART 4: THE FOUR TICKETS
+  1. fix-1-no-row.html: the columns are directly in the container. Column classes only work inside a row, which supplies the flex layout, so without it each col-md-4 is an ordinary block one third wide. Put the three columns in a div with the class row.
+  2. fix-2-too-many-units.html: the units are 4, 4 and 5, which is 13. Twelve is the most that fit on a line, so the third column wraps. Change col-md-5 to col-md-4.
+  3. fix-3-row-cols-typo.html: the row's classes are row-col-1 and row-col-md-3. The name is row-cols, with an s. Bootstrap has no class called row-col-1, so the row has no count of items across, and the six plain col children share the line equally: all six on one line at 1200, and several to a line at 400 (how many depends on the font, because the words cannot be squeezed further). Write row row-cols-1 row-cols-md-3.
+  4. fix-4-offset-sum.html: col-md-10 offset-md-2 has two empty units before the column and none after, so the notice is pushed right. Use col-md-8 offset-md-2: two empty units before and two after.

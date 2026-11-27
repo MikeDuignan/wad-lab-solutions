@@ -93,4 +93,16 @@ The answers below match all five exercises in the Week 8 SCORM package.
 | 4. JSON and browser storage | [Worked pages, predictions and fixes](week-08/week8-exercise4-json-storage) | [JSON and storage answers](week-08/week8-exercise4-json-storage/week8-exercise4-the-answers.txt) |
 | 5. Troubleshooting | [Worked pages, predictions and fixes](week-08/week8-exercise5-troubleshooting) | [Troubleshooting answers](week-08/week8-exercise5-troubleshooting/week8-exercise5-the-answers.txt) |
 
+## Week 9
+
+The answers below match all four exercises in the Week 9 Bootstrap SCORM package.
+The HTML pages use Bootstrap 5.3.9 from a CDN and need an internet connection.
+
+| Exercise | Folder | Answer key |
+|---|---|---|
+| 1. Getting started with Bootstrap | [Worked pages, predictions and fixes](week-09/week9-exercise1-getting-started) | [Getting started answers](week-09/week9-exercise1-getting-started/week9-exercise1-the-answers.txt) |
+| 2. The Bootstrap grid | [Worked pages, predictions and fixes](week-09/week9-exercise2-grid) | [Grid answers](week-09/week9-exercise2-grid/week9-exercise2-the-answers.txt) |
+| 3. Components | [Worked pages, predictions and fixes](week-09/week9-exercise3-components) | [Components answers](week-09/week9-exercise3-components/week9-exercise3-the-answers.txt) |
+| 4. Forms, utilities and your own CSS | [Worked pages, predictions and fixes](week-09/week9-exercise4-forms-utilities) | [Forms and utilities answers](week-09/week9-exercise4-forms-utilities/week9-exercise4-the-answers.txt) |
+
 New weeks are added as they are covered.
